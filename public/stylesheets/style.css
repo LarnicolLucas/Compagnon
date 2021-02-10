@@ -4,13 +4,25 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.transiAll{
+  transition: all 0.3 ease-out;
+}
+
+.fixedHeight80 {
+  height: 80vh;
+}
+
+.fixedHeight100 {
+  height: 100vh;
+}
+
 .trans01{
   background: rgba(0, 0, 0, 0.1);
 }
 
 .borderTopLeft{
   border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .borderRadius{
@@ -23,4 +35,8 @@ body {
 
 .blur{
   backdrop-filter: blur(16px);
+}
+
+.darkModeColor {
+  background: #212121;
 }
