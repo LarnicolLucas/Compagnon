@@ -13,8 +13,24 @@ main{
   transition: all 0.3 ease-out;
 }
 
+@keyframes menu_slide{
+  0%{
+      width: 10em;
+  }
+  50%{
+      width: 12em;
+  }
+  100%{
+      width: 3em;
+  }
+}
+
 .fixedHeight80 {
   height: 80vh;
+}
+
+.fixedHeight90 {
+  height: 90vh;
 }
 
 .fixedHeight100 {
@@ -31,10 +47,36 @@ main{
 
 }
 
+.margTopBot{
+  margin-top: 3vh;
+  margin-bottom: 3vh; 
+}
+
+.leftNavBar{
+  width: 10em;
+  transition: all 0.3s ease-out;
+  margin-left: 3vh;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.main_content{
+  width: 100%;
+  margin-right: 3vh;
+  border-radius: 0 1rem 1rem 0;
+}
+
+.leftNavBar:hover{
+  animation: menu_slide 0.4s ease-out forwards;
+}
+
+
 .borderRadius{
   border-radius: 1rem;
 }
 
 .darkModeColor {
   background: #212121;
+}
+.lightModeColor{
+  background: #fff;
 }
