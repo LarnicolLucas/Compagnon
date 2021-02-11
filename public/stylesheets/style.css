@@ -47,6 +47,11 @@ main{
 
 }
 
+.mini_badge{
+  padding: 1rem;
+  border-radius: 5px;
+}
+
 .margTopBot{
   margin-top: 3vh;
   margin-bottom: 3vh; 
@@ -79,4 +84,11 @@ main{
 }
 .lightModeColor{
   background: #fff;
+}
+
+.darkModeTextColor {
+  color: #fff;
+}
+.lightModeTextColor{
+  color: #212121;
 }

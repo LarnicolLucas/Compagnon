@@ -7,7 +7,18 @@ var app = new Vue({
         lightMode: true,
         darkMode: false,
         isLarge: true,
-        isMobile: false
+        isMobile: false,
+
+        agent: {
+          nom: "* Usher",
+          prenom: "*",
+          cursus_actuel: "En progression avec frottement",
+          habilitation: "H1V B1",
+
+          IMD: 30,
+          PST: 1,
+          VPS: 0
+        }
       }
     },
     methods:{

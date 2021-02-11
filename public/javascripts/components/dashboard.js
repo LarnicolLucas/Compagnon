@@ -1,3 +1,5 @@
+import card from './card.js'
+
 const dashboard = {
     template: `
 
@@ -11,12 +13,21 @@ const dashboard = {
             >
             </div>
 
-            <aside class="main_content glass margTopBot">
+            <aside class="row main_content margTopBot">
+                <div 
+                    class="col s3 borderRadius glass"
+                    style="margin-top: -10vh; margin-left: 68%;"
+                    >
+                    <card :props="props"></card>
+                </div>
             </aside>
             
         </article>
     `,
-    props: ['props']
+    props: ['props'],
+    components:{
+        card: card
+    }
 }
 
 export default dashboard
