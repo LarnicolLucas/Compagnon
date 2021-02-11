@@ -2,7 +2,7 @@ const card = {
     template:`
     <section class="row center-align" :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode}">
         <figure class="col s10 offset-s1">
-            <img class="responsive-img circle" alt="avatar agent" src="/images/avatar.jpg"/>
+            <img class="responsive-img circle" alt="avatar agent" :src="props.agent.chemin_avatar"/>
         </figure>
         <figcaption class="col s12">
             <h5><strong><b>{{props.agent.nom}}</b></strong> {{props.agent.prenom}}</h5>

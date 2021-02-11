@@ -17,7 +17,9 @@ var app = new Vue({
 
           IMD: 30,
           PST: 1,
-          VPS: 0
+          VPS: 0,
+
+          chemin_avatar: "/images/avatar.jpg"
         }
       }
     },
