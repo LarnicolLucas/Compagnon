@@ -3,5 +3,6 @@ extends layout
 block content
   
   <main id="app">
-    <card></card>
+    <containerdashboard :props="params"></containerdashboard>
+    <button @click="changeMode">Switch dark MODE</button>
   </main>
