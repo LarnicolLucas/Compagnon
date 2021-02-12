@@ -3,6 +3,7 @@ export default {
 		"nom": "Caron",
 		"prenom": "Joris",
 		"etape_cursus_PST": "Formation par frottement",
+		"id_etape_cursus_PST": 0,
 		"habilitation": "B1 H1V",
 		"IMD": 30,
 		"PST": 1,

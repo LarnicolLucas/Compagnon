@@ -15,7 +15,7 @@ const dashboard = {
 
             <aside class="row main_content margTopBot">
                 <div 
-                    class="col s10 l3 offset-s1 offset-l6"
+                    class="col s10 l3 offset-s1 offset-l7"
                     style="margin-top: -10vh;"
                 >
                     <card :props="props"></card>
