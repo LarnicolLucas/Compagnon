@@ -12,7 +12,7 @@ const container = {
             <figure style='position: absolute; top:0; left: -10%; width: 50%;'><img class="responsive-img" src="/images/bulle0.svg"/></figure>
             <figure style='position: absolute; top: -30%; left: 60%; width: 50%;'><img class="responsive-img" src="/images/bulle1.svg"/></figure>
 
-            <dashboard :props="props"></dashboard>
+            <dashboard class="col m12 l8 offset-l2" :props="props"></dashboard>
         </section>
     `,
 

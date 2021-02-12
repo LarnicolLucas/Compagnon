@@ -4,20 +4,20 @@ const dashboard = {
     template: `
 
         <article 
-            class="col m12 l8 offset-l2 glass borderRadius fixedHeight80"
+            class="glass borderRadius fixedHeight80"
             style="margin-top: 10vh; display: flex;"
         >
             <div 
-                class="leftNavBar margTopBot"
+                class="leftNavBar margTopBot hide-on-med-and-down"
                 :class='{"lightModeColor" : props.lightMode, "darkModeColor": props.darkMode}'
             >
             </div>
 
             <aside class="row main_content margTopBot">
                 <div 
-                    class="col s3 borderRadius glass"
-                    style="margin-top: -10vh; margin-left: 68%;"
-                    >
+                    class="col s10 l3 offset-s1 offset-l6"
+                    style="margin-top: -10vh;"
+                >
                     <card :props="props"></card>
                 </div>
             </aside>
