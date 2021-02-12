@@ -1,5 +1,7 @@
 import ContainerDashBoard from './components/container_dash_board.js'
 
+import model from './data_compagnon.js'
+
 var app = new Vue({
     el: '#app',
     data: {
@@ -8,19 +10,15 @@ var app = new Vue({
         darkMode: false,
         isLarge: true,
         isMobile: false,
+        color_call_to_action: "purple",
 
-        agent: {
-          nom: "* Usher",
-          prenom: "*",
-          cursus_actuel: "En progression avec frottement",
-          habilitation: "H1V B1",
-
-          IMD: 30,
-          PST: 1,
-          VPS: 0,
-
-          chemin_avatar: "/images/avatar.jpg"
-        }
+        model: model,
+        chemin_fond_avatar: [
+          "/images/fond_PST/0.jpg",
+          "/images/fond_PST/1.jpg",
+          "/images/fond_PST/2.jpg",
+          "/images/fond_PST/3.jpg",
+        ]
       }
     },
     methods:{
