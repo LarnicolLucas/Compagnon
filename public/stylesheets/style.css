@@ -20,14 +20,37 @@ main{
 
 @keyframes menu_slide{
   0%{
-      width: 10em;
+      width: 20em;
   }
   50%{
-      width: 12em;
+      width: 24em;
   }
   100%{
-      width: 3em;
+      width: 6em;
   }
+}
+@keyframes menu_slideClose{
+  0%{
+      width: 6em;
+  }
+  50%{
+      width: 24em;
+  }
+  100%{
+      width: 20em;
+  }
+}
+.animationExtend{
+  animation: menu_slide 0.4s ease-out forwards;
+}
+.animationNoExtend{
+  animation: menu_slideClose 0.4s ease-out forwards;
+}
+.leftNavBar{
+  width: 20em;
+  transition: all 0.3s ease-out;
+  margin-left: 3vh;
+  border-radius: 1rem 0 0 1rem;
 }
 
 .fixedHeight80 {
@@ -56,21 +79,9 @@ main{
   backdrop-filter: blur(16px);
 }
 
-.mini_badge{
-  padding: 1rem;
-  border-radius: 5px;
-}
-
 .margTopBot{
   margin-top: 3vh;
   margin-bottom: 3vh; 
-}
-
-.leftNavBar{
-  width: 20em;
-  transition: all 0.3s ease-out;
-  margin-left: 3vh;
-  border-radius: 1rem 0 0 1rem;
 }
 
 .main_content{
@@ -78,11 +89,6 @@ main{
   margin-right: 3vh;
   border-radius: 0 1rem 1rem 0;
 }
-
-.animationExtend{
-  animation: menu_slide 0.4s ease-out forwards;
-}
-
 
 .borderRadius{
   border-radius: 1rem;

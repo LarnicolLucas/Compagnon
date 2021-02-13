@@ -15,7 +15,7 @@ const card = {
         </figure>
         <figcaption 
             class="col s4 l8 offset-s4 offset-l2 borderRadius" 
-            :style="{background: props.color_call_to_action}"
+            :style="{background: props.color_contrast}"
             style="margin-bottom: 20px; margin-top: 20px;"
         >
             <h6><strong>{{props.model.agent.nom}} {{props.model.agent.prenom}}</strong></h6>
@@ -29,19 +29,19 @@ const card = {
                 <div class="col m4">
                     <div class="row">
                         <div class="col s10 offset-1">IMD</div>
-                        <div class="col s10 offset-1 borderRadius" :style="{background: props.color_call_to_action}">{{props.model.agent.IMD}}</div>
+                        <div class="col s10 offset-1 borderRadius" :style="{background: props.color_contrast}">{{props.model.agent.IMD}}</div>
                     </div>
                 </div>
                 <div class="col m4">
                     <div class="row">
                         <div class="col s10 offset-1">PST</div>
-                        <div class="col s10 offset-1 borderRadius" :style="{background: props.color_call_to_action}">{{props.model.agent.PST}}</div>
+                        <div class="col s10 offset-1 borderRadius" :style="{background: props.color_contrast}">{{props.model.agent.PST}}</div>
                     </div>
                 </div>
                 <div class="col m4">
                     <div class="row">
                         <div class="col s10 offset-1">VPS</div>
-                        <div class="col s10 offset-1 borderRadius" :style="{background: props.color_call_to_action}">{{props.model.agent.VPS}}</div>
+                        <div class="col s10 offset-1 borderRadius" :style="{background: props.color_contrast}">{{props.model.agent.VPS}}</div>
                     </div>
                 </div>
             </div>

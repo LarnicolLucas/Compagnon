@@ -1,4 +1,5 @@
 import card from './card.js'
+import left_nav from './left_nav.js'
 
 const dashboard = {
     template: `
@@ -9,8 +10,23 @@ const dashboard = {
         >
             <div 
                 class="leftNavBar margTopBot hide-on-med-and-down"
-                :class='{"lightModeColor" : props.lightMode, "darkModeColor": props.darkMode}'
+                :class='{
+                    "lightModeColor" : props.lightMode, 
+                    "darkModeColor": props.darkMode,
+                    "animationExtend": !state_menu_open,  
+                    "animationNoExtend": state_menu_open
+                }'
             >
+                <left_nav 
+                    :props="{
+                        color_contrast: props.color_contrast, 
+                        color_primary: props.color_primary,
+                        darkMode: props.darkMode,
+                        lightMode: props.lightMode
+                    }"
+                    @menuclose="closemenu"
+                    @menuopen="openmenu"
+                ></left_nav>
             </div>
 
             <aside class="row main_content margTopBot">
@@ -25,8 +41,25 @@ const dashboard = {
         </article>
     `,
     props: ['props'],
+    data: function(){
+        return{
+            state_menu_open : true,
+        }
+    },
+    methods: {
+        openmenu: function(){
+
+            this.state_menu_open = true;
+
+        },
+        closemenu: function(){
+            this.state_menu_open = false;
+        }
+    },
     components:{
+        left_nav: left_nav,
         card: card
+
     }
 }
 
