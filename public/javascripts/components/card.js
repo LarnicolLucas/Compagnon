@@ -1,7 +1,7 @@
 const card = {
     template:`
     <section 
-        class="row center-align glass borderRadius" 
+        class="row center-align glass borderRadiusCard" 
         :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode}"
         style="position: relative; overflow: hidden;"
     >
