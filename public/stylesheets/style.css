@@ -67,7 +67,7 @@ main{
 }
 
 .leftNavBar{
-  width: 10em;
+  width: 20em;
   transition: all 0.3s ease-out;
   margin-left: 3vh;
   border-radius: 1rem 0 0 1rem;
@@ -79,13 +79,17 @@ main{
   border-radius: 0 1rem 1rem 0;
 }
 
-.leftNavBar:hover{
+.animationExtend{
   animation: menu_slide 0.4s ease-out forwards;
 }
 
 
 .borderRadius{
   border-radius: 1rem;
+}
+
+.borderRadiusCard{
+  border-radius: 1rem 0 1rem 1rem;
 }
 
 .darkModeColor {
