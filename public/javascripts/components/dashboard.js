@@ -1,5 +1,6 @@
 import card from './card.js'
 import left_nav from './left_nav.js'
+import items_list from './items_list.js'
 
 const dashboard = {
     template: `
@@ -30,12 +31,24 @@ const dashboard = {
             </div>
 
             <aside class="row main_content margTopBot">
-                <div 
-                    class="col s10 l3 offset-s1 offset-l7"
-                    style="margin-top: -10vh;"
-                >
-                    <card :props="props"></card>
-                </div>
+                    <div class="row">
+
+                        <div 
+                            class="col s10 l6 offset-s1"
+                            style="margin-left: 5em; margin-top: 5em;"
+                        >
+                            <items_list :props="props"></items_list>
+                        </div>
+
+
+                        <div 
+                            class="col s10 l3 offset-s1 offset-l1"
+                            style="margin-top: -10vh;"
+                        >
+                            <card :props="props"></card>
+                        </div>
+
+                    </div>
             </aside>
             
         </article>
@@ -58,7 +71,8 @@ const dashboard = {
     },
     components:{
         left_nav: left_nav,
-        card: card
+        card: card,
+        items_list: items_list
 
     }
 }

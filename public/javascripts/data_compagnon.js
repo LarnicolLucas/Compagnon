@@ -59,7 +59,8 @@ export default {
 	"items_metier": [
 		{
 			"id":0,
-			"nom" :"C4 : Prestations",
+			"nom" :"Prestations",
+			"domaine": "C4",
 			"list": [
 				{
 					"id": 0,
@@ -102,7 +103,8 @@ export default {
 		
 		{
 			"id": 1,
-			"nom" :"C4 : Actes Techniques",
+			"nom" :"Actes Techniques",
+			"domaine": "C4",
 			"list": [
 				{
 					"id":0,
@@ -151,7 +153,9 @@ export default {
 			],
 		},
 		{
-			"nom" :"C4 : Relation Client",
+			"id": 2,
+			"nom" :"Relation Client",
+			"domaine": "C4",
 			"list": [
 				{
 					"id": 0,
