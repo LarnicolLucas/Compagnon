@@ -111,7 +111,7 @@ main{
 }
 
 .textAnimation{
-  animation: bounceTextSize 0.2s ease-out forwards;
+  animation: bounceTextSize 0.15s ease-out forwards;
 
 }
 
