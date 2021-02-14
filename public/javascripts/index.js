@@ -2,6 +2,11 @@ import ContainerDashBoard from './components/container_dash_board.js'
 
 import model from './data_compagnon.js'
 
+var palette= {
+  primary: "#aaaa39",
+  contrast: "purple"
+};
+
 var app = new Vue({
     el: '#app',
     data: {
@@ -10,7 +15,9 @@ var app = new Vue({
         darkMode: false,
         isLarge: true,
         isMobile: false,
-        color_call_to_action: "purple",
+
+        color_contrast: palette.contrast,
+        color_primary: palette.primary,
 
         model: model,
         chemin_fond_avatar: [
