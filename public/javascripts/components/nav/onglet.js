@@ -5,11 +5,9 @@ const onglet = {
                 margin-bottom: 1em;
                 border-radius: 0.5em 0 0 0.5em;
             "
-            :style="{color: backGround}"
             :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode}"
-            @mouseover="preSelect"
             @click="selected"
-            class="transi"
+            class="transi onglet"
         >
             <p class="valign-wrapper">
                 <i class="material-icons"> {{props.icon}} </i> 
@@ -20,15 +18,15 @@ const onglet = {
     props:['props'],
     data: function(){
         return {
-            backGround: ''
+            text_color: false
         }
     },
     methods:{
-        preSelect: function(){
-            this.backGround= this.props.color;
-        },
+
         selected: function(){
-            this.backGround= this.props.color;
+            this.text_color= true;
+            this.props.darkMode= false;
+            this.props.lightMode= false;
         }
     }
 }

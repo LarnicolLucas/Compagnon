@@ -111,3 +111,7 @@ main{
 .lightModeTextColor{
   color: #212121;
 }
+
+.onglet:hover{
+  color: purple
+}
