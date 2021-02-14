@@ -27,8 +27,11 @@ const left_nav = {
                             hide: menu_open,
                             color: props.color_contrast,
                             lightMode: props.lightMode,
-                            darkMode: props.darkMode
+                            darkMode: props.darkMode,
+                            init: keys.init,
+                            id: keys.id
                         }"
+                        @ongletSelected= "ongletSelected"
                     ></onglet>
                 
                 </div>
@@ -54,22 +57,26 @@ const left_nav = {
               {
                 id:0,
                 nom: "Tableau de bord",
-                icon: "leaderboard"
+                icon: "leaderboard",
+                init: false
               },
               {
                 id:1,
                 nom: "Historique des Interventions",
-                icon: "calendar_today"
+                icon: "calendar_today",
+                init: false
               },
               {
                 id:2,
                 nom: "Cursus de Formation",
-                icon: "timeline"
+                icon: "timeline",
+                init: false
               },
               {
                 id:3,
                 nom: "Items et Agents",
-                icon: "playlist_add"
+                icon: "playlist_add",
+                init: false
               },
             ],
             footer: {
@@ -89,6 +96,12 @@ const left_nav = {
             this.menu_close = false;
             this.menu_open = true;;
             this.$emit("menuopen")
+        },
+        ongletSelected: function(e){
+            const id = e.id;
+            const nom = e.nom;
+            this.navigation.forEach(el => el.id == id ? el.init = false : el.init = true)
+
         }
     },
     components: {

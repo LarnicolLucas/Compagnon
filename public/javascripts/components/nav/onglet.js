@@ -8,6 +8,7 @@ const onglet = {
             :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode}"
             @click="selected"
             class="transi onglet"
+            :style='{color: text_color}'
         >
             <p class="valign-wrapper">
                 <i class="material-icons"> {{props.icon}} </i> 
@@ -18,15 +19,19 @@ const onglet = {
     props:['props'],
     data: function(){
         return {
-            text_color: false
+            text_color: ""
         }
     },
     methods:{
 
         selected: function(){
-            this.text_color= true;
-            this.props.darkMode= false;
-            this.props.lightMode= false;
+            this.text_color= this.props.color;
+            this.$emit("ongletSelected", {id: this.props.id, nom: this.props.nom})
+        }
+    },
+    updated: function(){
+        if(this.props.init){
+            this.text_color = ""
         }
     }
 }
