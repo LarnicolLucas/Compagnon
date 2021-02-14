@@ -98,6 +98,23 @@ main{
   border-radius: 1rem 0 1rem 1rem;
 }
 
+@keyframes bounceTextSize{
+  0%{
+    font-size: 10px;
+  }
+  70%{
+    font-size: 15px;
+  }
+  100%{
+    font-size: 10px;
+  }
+}
+
+.textAnimation{
+  animation: bounceTextSize 0.2s ease-out forwards;
+
+}
+
 .darkModeColor {
   background: #212121;
 }

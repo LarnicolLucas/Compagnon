@@ -5,7 +5,7 @@ const onglet = {
                 margin-bottom: 1em;
                 border-radius: 0.5em 0 0 0.5em;
             "
-            :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode}"
+            :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode, 'textAnimation': effect}"
             @click="selected"
             class="transi onglet"
             :style='{color: text_color}'
@@ -19,19 +19,22 @@ const onglet = {
     props:['props'],
     data: function(){
         return {
-            text_color: ""
+            text_color: "",
+            effect: false
         }
     },
     methods:{
 
         selected: function(){
             this.text_color= this.props.color;
+            this.effect = true;
             this.$emit("ongletSelected", {id: this.props.id, nom: this.props.nom})
         }
     },
     updated: function(){
         if(this.props.init){
-            this.text_color = ""
+            this.text_color = "",
+            this.effect= false
         }
     }
 }
