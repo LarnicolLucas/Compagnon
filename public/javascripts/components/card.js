@@ -6,7 +6,7 @@ const card = {
         style="position: relative; overflow: hidden;"
     >
         <!-- <figure class="col s12" style="position: absolute; top: -10%; left: 0; z-index: -1; ">
-            <img :src="props.chemin_fond_avatar[props.model.agent.id_etape_cursus_PST]" class="responsive-img" alt="Image de fond"/>
+            <img :src="chemin_fond_avatar[props.model.agent.id_etape_cursus_PST]" class="responsive-img" alt="Image de fond"/>
         </figure> -->
 
 
@@ -50,7 +50,18 @@ const card = {
         <article style="position: absolute; top: 0; right: 0">{{props.model.agent.habilitation}}</article>
     </section>
     `,
-    props:["props"]
+    props:["props"],
+
+    data: function(){
+        return {
+            chemin_fond_avatar: [
+                "/images/fond_PST/0.jpg",
+                "/images/fond_PST/1.jpg",
+                "/images/fond_PST/2.jpg",
+                "/images/fond_PST/3.jpg",
+              ]
+        }
+    }
 }
 
 export default card

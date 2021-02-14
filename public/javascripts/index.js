@@ -19,13 +19,7 @@ var app = new Vue({
         color_contrast: palette.contrast,
         color_primary: palette.primary,
 
-        model: model,
-        chemin_fond_avatar: [
-          "/images/fond_PST/0.jpg",
-          "/images/fond_PST/1.jpg",
-          "/images/fond_PST/2.jpg",
-          "/images/fond_PST/3.jpg",
-        ]
+        model: model
       }
     },
     methods:{
