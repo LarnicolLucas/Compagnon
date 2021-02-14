@@ -37,7 +37,7 @@ const left_nav = {
 
             <aside>
                 <dev_menu 
-                    :props="{color: props.color_contrast}"
+                    :props="{color: props.color_contrast, lightMode: props.lightMode, darkMode: props.darkMode}"
                     @menuclose="closemenu"
                     @menuopen="openmenu"
                 ></dev_menu>

@@ -10,7 +10,8 @@ const dev_menu = {
                 height: 25px;
                 cursor: pointer;
             "
-            :style="{border: '1px solid '+props.color, background: '#fff'}"
+            :style="{border: '1px solid '+props.color}"
+            :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode, 'darkModeColor': props.darkMode, 'lightModeColor': props.lightMode}"
             class="transi valign-wrapper"
             @click="toggle"
         >
