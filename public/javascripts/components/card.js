@@ -1,25 +1,16 @@
+import card_img from './card/card_img.js'
+
 const card = {
     template:`
     <section 
         class="row center-align glass borderRadiusCard" 
         :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode}"
-        style="position: relative; overflow: hidden;"
+        style="position: relative;"
     >
-        <!-- <figure class="col s12" style="position: absolute; top: -10%; left: 0; z-index: -1; ">
-            <img :src="chemin_fond_avatar[props.model.agent.id_etape_cursus_PST]" class="responsive-img" alt="Image de fond"/>
-        </figure> -->
+
+        <card_img :props="props"></card_img>
 
 
-        <figure class="col s4 l8 offset-s4 offset-l2">
-            <img class="responsive-img circle" alt="avatar agent" :src="props.model.agent.chemin_avatar"/>
-        </figure>
-        <figcaption 
-            class="col s4 l8 offset-s4 offset-l2 borderRadius" 
-            :style="{background: props.color_contrast}"
-            style="margin-bottom: 20px; margin-top: 20px;"
-        >
-            <h6><strong>{{props.model.agent.nom}} {{props.model.agent.prenom}}</strong></h6>
-        </figcaption>
         <div class="divider"></div>
         <div class="col s4 l6 offset-s4 offset-l3">
             <p> {{props.model.agent.etape_cursus_PST}} </p>
@@ -47,7 +38,9 @@ const card = {
             </div>
         </section>
 
-        <article style="position: absolute; top: 0; right: 0">{{props.model.agent.habilitation}}</article>
+        <article class="glass" style="position: absolute; top: 1em; right: -2em; border-radius: 3px;">
+            <h6>{{props.model.agent.habilitation}}</h6>
+        </article>
     </section>
     `,
     props:["props"],
@@ -61,6 +54,9 @@ const card = {
                 "/images/fond_PST/3.jpg",
               ]
         }
+    },
+    components: {
+        card_img: card_img
     }
 }
 
