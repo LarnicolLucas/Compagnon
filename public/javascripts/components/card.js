@@ -1,4 +1,5 @@
 import card_img from './card/card_img.js'
+import description_card from './card/description_card.js'
 
 const card = {
     template:`
@@ -10,33 +11,7 @@ const card = {
 
         <card_img :props="props"></card_img>
 
-
-        <div class="divider"></div>
-        <div class="col s4 l6 offset-s4 offset-l3">
-            <p> {{props.model.agent.etape_cursus_PST}} </p>
-        </div>
-        <section class="col s4 l8 offset-s4 offset-l2">
-            <div class="row">
-                <div class="col m4">
-                    <div class="row">
-                        <div class="col s10 offset-1">IMD</div>
-                        <div class="col s10 offset-1 borderRadius" :style="{background: props.color_contrast}">{{props.model.agent.IMD}}</div>
-                    </div>
-                </div>
-                <div class="col m4">
-                    <div class="row">
-                        <div class="col s10 offset-1">PST</div>
-                        <div class="col s10 offset-1 borderRadius" :style="{background: props.color_contrast}">{{props.model.agent.PST}}</div>
-                    </div>
-                </div>
-                <div class="col m4">
-                    <div class="row">
-                        <div class="col s10 offset-1">VPS</div>
-                        <div class="col s10 offset-1 borderRadius" :style="{background: props.color_contrast}">{{props.model.agent.VPS}}</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <description_card :props="props"></description_card>
 
         <article class="glass" style="position: absolute; top: 1em; right: -2em; border-radius: 3px;">
             <h6>{{props.model.agent.habilitation}}</h6>
@@ -56,7 +31,8 @@ const card = {
         }
     },
     components: {
-        card_img: card_img
+        card_img: card_img,
+        description_card:  description_card
     }
 }
 
