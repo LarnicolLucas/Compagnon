@@ -1,5 +1,6 @@
 import dev_menu from './nav/dev_menu.js'
 import onglet from './nav/onglet.js'
+import footer from './nav/footer.js'
 
 
 const left_nav = {
@@ -7,11 +8,6 @@ const left_nav = {
         <article 
             style="position: relative; width: 100%; height: 100%"
         >
-            <div class="row">
-
-
-
-            </div>
             <div class="row" style="margin-top: 100px; margin-left: 0.5em;">
 
                 <div
@@ -37,6 +33,8 @@ const left_nav = {
                 </div>
                 
             </div>
+
+            <footer_nav style="position: absolute; bottom: 100px;"></footer_nav>
 
             <aside>
                 <dev_menu 
@@ -106,7 +104,8 @@ const left_nav = {
     },
     components: {
         dev_menu : dev_menu,
-        onglet: onglet
+        onglet: onglet,
+        footer_nav: footer
     }
 }
 

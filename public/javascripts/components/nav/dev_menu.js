@@ -3,7 +3,7 @@ const dev_menu = {
         <div  
             style="
                 position: absolute; 
-                top: calc(50% - 15px); 
+                top: calc(33% - 15px); 
                 right: -15px; 
                 border-radius: 50%; 
                 width: 25px; 
