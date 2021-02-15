@@ -1,3 +1,5 @@
+import table from './table.js'
+
 const items_list = {
     template: `
         <div class="row">
@@ -25,14 +27,22 @@ const items_list = {
                 class="col s12"
                 v-for="keys in props.model.items_metier"
                 :key="keys.id"
-            >{{keys.nom}}</div>
+            >
+                <table_geste
+                    :props="{
+                        list_geste: keys.list,
+                        list_interventions: props.model.interventions,
+                        id_item: keys.id,
+                    }"
+                ></table_geste>
+            </div>
         </div>
     `,
     props:['props'],
     data: function(){
         return {
             colorTabs: {
-                "C4": "#EADE74",
+                "C4": "#91913a",
                 "C1/C2/C3": "#74EA9A",
             }
         }
@@ -40,6 +50,9 @@ const items_list = {
     mounted: function() {
         const el = this.$refs.tab;
         var M_instance = M.Tabs.init(el, {swipeable: true});
+    },
+    components: {
+        table_geste: table
     }
 }
 
