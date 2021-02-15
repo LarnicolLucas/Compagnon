@@ -34,15 +34,15 @@ const dashboard = {
                     <div class="row">
 
                         <div 
-                            class="col s10 l6 offset-s1"
-                            style="margin-left: 5em; margin-top: 5em;"
+                            class="col s10 l5"
+                            style="margin-left: 5em; margin-top: 2em;"
                         >
                             <items_list :props="props"></items_list>
                         </div>
 
 
                         <div 
-                            class="col s10 l3 offset-s1 offset-l1"
+                            class="col s10 l3 offset-s1 offset-l3"
                             style="margin-top: -10vh;"
                         >
                             <card :props="props"></card>

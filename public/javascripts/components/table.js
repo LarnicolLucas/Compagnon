@@ -6,8 +6,8 @@ const table = {
 			<thead>
 			  <tr>
 				  <th>Nom</th>
-				  <th>Réalisé</th>
-				  <th>Maîtrise</th>
+				  <th class="center-align">Réalisé</th>
+				  <th class="center-align">Maîtrise</th>
 			  </tr>
 			</thead>
 
@@ -16,9 +16,9 @@ const table = {
 				v-for="keys in table_elements"
 				:key="keys.list"
 			  >
-				<td> {{ keys.nom }} </td>
-				<td> {{ keys.realise }} </td>
-				<td> {{ keys.maitrise }} </td>
+				<td style="padding: 5px;"> {{ keys.nom }} </td>
+				<td style="padding: 5px;" class="center-align"> {{ keys.realise }} </td>
+				<td style="padding: 5px;" class="center-align"> {{ keys.maitrise }} </td>
 			  </tr>
 			</tbody>
 		</table>
@@ -33,7 +33,7 @@ const table = {
 	mixins: [mixin_bilan_maitrise_geste],
 
 	mounted: function(){
-		this.table_elements = this.CreateBilan()
+		this.table_elements = this.CreateBilan();
 	}
 }
 

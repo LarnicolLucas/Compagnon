@@ -2,11 +2,16 @@ import table from './table.js'
 
 const items_list = {
     template: `
-        <div class="row">
+        <div 
+            class="row glass borderRadius"
+            :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode}"
+            >
             <div class="col s12">
                 <ul 
                     class="tabs borderRadius" 
                     ref="tab"
+                    style="background: none;"
+
                 >
                     <li 
                         class="tab col s4"
@@ -16,7 +21,7 @@ const items_list = {
                         <a 
                             style="font-size: 10px;" 
                             :href=" '#tabList' + keys.id "
-                            :style="{color: colorTabs[keys.domaine]}"
+                            :style="{color: colorTabs[keys.domaine], padding: '10px'}"
                         > {{keys.nom}} </a>
                     </li>
                 </ul>
@@ -33,6 +38,8 @@ const items_list = {
                         list_geste: keys.list,
                         list_interventions: props.model.interventions,
                         id_item: keys.id,
+                        darkMode: props.darkMode,
+                        lightMode: props.lightMode
                     }"
                 ></table_geste>
             </div>
@@ -42,14 +49,14 @@ const items_list = {
     data: function(){
         return {
             colorTabs: {
-                "C4": "#91913a",
+                "C4": "#000",
                 "C1/C2/C3": "#74EA9A",
             }
         }
     },
     mounted: function() {
         const el = this.$refs.tab;
-        var M_instance = M.Tabs.init(el, {swipeable: true});
+        var M_instance = M.Tabs.init(el, {swipeable: true, duration: 100});
     },
     components: {
         table_geste: table

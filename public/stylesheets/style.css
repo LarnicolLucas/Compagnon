@@ -132,3 +132,7 @@ main{
 .onglet:hover{
   color: purple
 }
+
+.tabs .indicator {
+  background-color: purple;
+}
