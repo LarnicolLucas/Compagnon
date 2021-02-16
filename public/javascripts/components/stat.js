@@ -7,8 +7,10 @@ const stat = {
 			<polygraph :props="props"></polygraph>
 		</svg>
 	`,
+	props:['props'],
 	components: {
 		polygraph: polygraph,
 	}
-	
 }
+
+export default stat

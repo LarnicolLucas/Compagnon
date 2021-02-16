@@ -13,7 +13,6 @@ main{
   padding: 0px;
   margin: 0px;
 }
-
 .transiAll{
   transition: all 0.3 ease-out;
 }
@@ -135,4 +134,14 @@ main{
 
 .tabs .indicator {
   background-color: purple;
+}
+
+polygon {
+  fill: purple;
+  opacity: 0.75;
+}
+
+circle {
+  fill: transparent;
+  stroke: #999;
 }

@@ -1,6 +1,7 @@
 import card from './card.js'
 import left_nav from './left_nav.js'
 import items_list from './items_list.js'
+import polygraph from './stat/polygraph.js'
 
 const dashboard = {
     template: `
@@ -37,7 +38,7 @@ const dashboard = {
                             class="col s10 l5"
                             style="margin-left: 5em; margin-top: 2em;"
                         >
-                            <items_list :props="props"></items_list>
+                            <items_list :props="props" @itemclicked="changeItem"></items_list>
                         </div>
 
 
@@ -46,6 +47,18 @@ const dashboard = {
                             style="margin-top: -10vh;"
                         >
                             <card :props="props"></card>
+                        </div>
+
+                        <div
+                            class="col s12 l3 offset-l1 glass borderRadius"
+                        >
+                            <polygraph :props="{
+                                list_geste: props.model.items_metier[selected_item].list,
+                                list_interventions: props.model.interventions,
+                                id_item: props.model.items_metier[selected_item].id,
+                                darkMode: props.darkMode,
+                                lightMode: props.lightMode
+                            }"></polygraph>
                         </div>
 
                     </div>
@@ -57,6 +70,7 @@ const dashboard = {
     data: function(){
         return{
             state_menu_open : true,
+            selected_item: 0
         }
     },
     methods: {
@@ -67,12 +81,17 @@ const dashboard = {
         },
         closemenu: function(){
             this.state_menu_open = false;
+        },
+
+        changeItem: function(e){
+            this.selected_item = e;
         }
     },
     components:{
         left_nav: left_nav,
         card: card,
-        items_list: items_list
+        items_list: items_list,
+        polygraph: polygraph
 
     }
 }

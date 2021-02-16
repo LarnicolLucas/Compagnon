@@ -22,6 +22,7 @@ const items_list = {
                             style="font-size: 10px;" 
                             :href=" '#tabList' + keys.id "
                             :style="{color: colorTabs[keys.domaine], padding: '10px'}"
+                            @click="$emit('itemclicked', keys.id)"
                         > {{keys.nom}} </a>
                     </li>
                 </ul>
@@ -32,6 +33,7 @@ const items_list = {
                 class="col s12"
                 v-for="keys in props.model.items_metier"
                 :key="keys.id"
+                style="height: 350px; overflow: auto;"
             >
                 <table_geste
                     :props="{
@@ -56,7 +58,7 @@ const items_list = {
     },
     mounted: function() {
         const el = this.$refs.tab;
-        var M_instance = M.Tabs.init(el, {swipeable: true, duration: 100});
+        var M_instance = M.Tabs.init(el, { duration: 100});
     },
     components: {
         table_geste: table
