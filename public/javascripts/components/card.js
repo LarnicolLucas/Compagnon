@@ -3,20 +3,21 @@ import description_card from './card/description_card.js'
 
 const card = {
     template:`
-    <section 
-        class="row center-align glass borderRadiusCard" 
-        :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode}"
-        style="position: relative;"
-    >
+    <div>
+        <section 
+            class="row center-align glass borderRadius" 
+            :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode}"
+            style="position: relative;"
+        >
 
-        <card_img :props="props"></card_img>
+            <card_img :props="props"></card_img>
 
-        <description_card :props="props"></description_card>
-
-        <article class="glass" style="position: absolute; top: 1em; right: -2em; border-radius: 3px;">
-            <h6>{{props.model.agent.habilitation}}</h6>
+            <description_card :props="props"></description_card>
+        </section>
+        <article class="glass" style="position: absolute; top: 1em; right: -2em; border-radius: 5px;">
+                <h6>{{props.model.agent.habilitation}}</h6>
         </article>
-    </section>
+    </div>
     `,
     props:["props"],
 

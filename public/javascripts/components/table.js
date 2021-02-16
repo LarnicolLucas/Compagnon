@@ -5,7 +5,7 @@ const table = {
 		<table class="striped">
 			<thead>
 			  <tr>
-				  <th>Nom</th>
+				  <th>Geste Métier</th>
 				  <th class="center-align">Réalisé</th>
 				  <th class="center-align">Maîtrise</th>
 			  </tr>
