@@ -12,7 +12,9 @@ const polygraph = {
 				:key="index"
 				:stat="stat"
 				:index="index"
-				:total="stats.length">
+				:total="stats.length"
+				:props="{darkMode: props.darkMode, lightMode: props.lightMode}"
+				>
 				</axis_label>
 			</g>
 		</svg>

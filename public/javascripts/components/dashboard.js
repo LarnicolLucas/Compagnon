@@ -34,23 +34,26 @@ const dashboard = {
             <aside class="row main_content margTopBot">
                     <div class="row">
 
-                        <div 
-                            class="col s10 l5"
-                            style="margin-left: 5em; margin-top: 2em;"
-                        >
-                            <items_list :props="props" @itemclicked="changeItem"></items_list>
-                        </div>
-
 
                         <div 
-                            class="col s10 l3 offset-s1 offset-l3"
+                            class="col s10 offset-s1 l3 offset-l1"
                             style="margin-top: -10vh;"
                         >
                             <card :props="props"></card>
                         </div>
 
+
+                        <div 
+                            class="col s10 offset-s1 l5 offset-l2"
+                        >
+                            <items_list :props="props" @itemclicked="changeItem"></items_list>
+                        </div>
+
+
+                        
+
                         <div
-                            class="col s12 l3 offset-l1 glass borderRadius"
+                            class="col s5 offset-s1 l3 offset-l2 glass borderRadius"
                         >
                             <polygraph :props="{
                                 list_geste: props.model.items_metier[selected_item].list,

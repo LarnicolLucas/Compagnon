@@ -33,7 +33,7 @@ const items_list = {
                 class="col s12"
                 v-for="keys in props.model.items_metier"
                 :key="keys.id"
-                style="height: 350px; overflow: auto;"
+                style="height: 300px; overflow: auto;"
             >
                 <table_geste
                     :props="{

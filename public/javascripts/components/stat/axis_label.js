@@ -1,11 +1,16 @@
 const axis_label = {
 	template: `
-		<text :x="point.x" :y="point.y">{{stat.nom}}</text>
+		<text
+         :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode}"
+		 :x="point.x" 
+		 :y="point.y"
+		>{{stat.nom}}</text>
 	`,
 	props: {
         stat: Object,
         index: Number,
-        total: Number
+        total: Number,
+		props: Object
     },
 
     computed: {
