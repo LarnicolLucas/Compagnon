@@ -53,15 +53,18 @@ const dashboard = {
                         
 
                         <div
-                            class="col s5 offset-s1 l3 offset-l2 glass borderRadius"
+                            class="col s5 offset-s1 l3 offset-l2 glass borderRadius center-align"
                         >
-                            <polygraph :props="{
-                                list_geste: props.model.items_metier[selected_item].list,
-                                list_interventions: props.model.interventions,
-                                id_item: props.model.items_metier[selected_item].id,
-                                darkMode: props.darkMode,
-                                lightMode: props.lightMode
-                            }"></polygraph>
+                            <polygraph 
+
+                                :props="{
+                                    list_geste: props.model.items_metier[selected_item].list,
+                                    list_interventions: props.model.interventions,
+                                    id_item: props.model.items_metier[selected_item].id,
+                                    darkMode: props.darkMode,
+                                    lightMode: props.lightMode
+                                }"
+                            ></polygraph>
                         </div>
 
                     </div>

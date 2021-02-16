@@ -3,7 +3,7 @@ import mixin_bilan_maitrise_geste from '../mixins/mixin_bilan_maitrise_geste.js'
 
 const polygraph = {
 	template: `
-		<svg width="200" height="200">
+		<svg class="responsive-img" width="200" height="200">
 			<g>
 				<polygon stroke-linejoin="round" :points="points"></polygon>
 				<circle cx="100" cy="100" r="80"></circle>
