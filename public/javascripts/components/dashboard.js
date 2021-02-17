@@ -11,7 +11,7 @@ const dashboard = {
             class="fixedHeight80"
             style="margin-top: 10vh; display: flex; position: relative;"
         >
-            <div class="borderRadius glass" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+            <div class="borderRadius glass" style="position: absolute; top: 0; left: 0; width: 100%; height: 80vh;"></div>
             <div 
                 class="leftNavBar margTopBot hide-on-med-and-down"
                 :class='{
@@ -40,7 +40,7 @@ const dashboard = {
 
                         <div 
                             class="col s10 offset-s1 l4 offset-l1"
-                            style="margin-top: -5vh; position: relative;"
+                            style="margin-top: -6vh; position: relative;"
                         >
                             <card :props="props"></card>
                         </div>
@@ -71,8 +71,8 @@ const dashboard = {
                         </div>
 
                         <div
-                            class="col s5 offset-s1 l6 offset-l1 glass borderRadius center-align"
-                            style='margin-top: 4vh;'
+                            class="col s5 offset-s1 l5 offset-l1 glass borderRadius center-align"
+                            style='margin-top: 5vh; height: 30vh;'
                         >
                             <graph :props="props" :id_geste="selected_geste" :id_item="selected_item"></graph>
                         </div>

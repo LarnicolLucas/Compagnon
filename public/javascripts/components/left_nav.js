@@ -6,8 +6,10 @@ import footer from './nav/footer.js'
 const left_nav = {
     template: `
         <article 
-            style="position: relative; width: 100%; height: 100%"
+            style="position: relative; width: 100%; height: 70%"
         >
+
+        <footer_nav style="position: absolute; bottom: 0"></footer_nav>
             <div class="row" style="margin-top: 100px; margin-left: 0.5em;">
 
                 <div
@@ -33,8 +35,6 @@ const left_nav = {
                 </div>
                 
             </div>
-
-            <footer_nav style="position: absolute; bottom: 100px;"></footer_nav>
 
             <aside>
                 <dev_menu 
