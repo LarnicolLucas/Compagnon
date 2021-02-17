@@ -15,6 +15,7 @@ const table = {
 			  <tr
 				v-for="keys in table_elements"
 				:key="keys.list"
+				@click="$emit('gesteclicked', keys.id_geste)"
 			  >
 				<td style="padding: 5px;"> {{ keys.nom }} </td>
 				<td style="padding: 5px;" class="center-align"> {{ keys.realise }} </td>

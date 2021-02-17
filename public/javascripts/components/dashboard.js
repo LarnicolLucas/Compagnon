@@ -2,6 +2,7 @@ import card from './card.js'
 import left_nav from './left_nav.js'
 import items_list from './items_list.js'
 import polygraph from './stat/polygraph.js'
+import graph from './graph.js'
 
 const dashboard = {
     template: `
@@ -48,7 +49,7 @@ const dashboard = {
                         <div 
                             class="col s10 offset-s1 l5 offset-l2"
                         >
-                            <items_list :props="props" @itemclicked="changeItem"></items_list>
+                            <items_list :props="props" @itemclicked="changeItem" @gesteclicked="changeGeste"></items_list>
                         </div>
 
 
@@ -69,6 +70,13 @@ const dashboard = {
                             ></polygraph>
                         </div>
 
+                        <div
+                            class="col s5 offset-s1 l4 offset-l1 glass borderRadius center-align"
+                        >
+                            <graph :props="props" :id_geste="selected_geste" :id_item="selected_item"></graph>
+                        </div>
+
+
                     </div>
             </aside>
             
@@ -78,7 +86,8 @@ const dashboard = {
     data: function(){
         return{
             state_menu_open : true,
-            selected_item: 0
+            selected_item: 0,
+            selected_geste: 0
         }
     },
     methods: {
@@ -93,13 +102,18 @@ const dashboard = {
 
         changeItem: function(e){
             this.selected_item = e;
+        },
+
+        changeGeste: function(e){
+            this.selected_geste = e;
         }
     },
     components:{
         left_nav: left_nav,
         card: card,
         items_list: items_list,
-        polygraph: polygraph
+        polygraph: polygraph,
+        graph: graph
 
     }
 }

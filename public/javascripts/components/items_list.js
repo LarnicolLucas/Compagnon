@@ -43,6 +43,7 @@ const items_list = {
                         darkMode: props.darkMode,
                         lightMode: props.lightMode
                     }"
+                    @gesteclicked="$emit('gesteclicked', $event)"
                 ></table_geste>
             </div>
         </div>
