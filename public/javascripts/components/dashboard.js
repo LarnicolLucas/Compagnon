@@ -39,24 +39,24 @@ const dashboard = {
 
 
                         <div 
-                            class="col s10 offset-s1 l3 offset-l1"
-                            style="margin-top: -10vh; position: relative;"
+                            class="col s10 offset-s1 l4 offset-l1"
+                            style="margin-top: -5vh; position: relative;"
                         >
                             <card :props="props"></card>
                         </div>
 
 
                         <div 
-                            class="col s10 offset-s1 l5 offset-l2"
+                            class="col s10 offset-s1 l6 offset-l1"
                         >
                             <items_list :props="props" @itemclicked="changeItem" @gesteclicked="changeGeste"></items_list>
                         </div>
 
 
-                        
-
+                    </div>    
+                    <div class="row">
                         <div
-                            class="col s5 offset-s1 l3 offset-l2 glass borderRadius center-align"
+                            class="col s5 offset-s1 l4 offset-l1 glass borderRadius center-align"
                         >
                             <polygraph 
 
@@ -71,7 +71,8 @@ const dashboard = {
                         </div>
 
                         <div
-                            class="col s5 offset-s1 l4 offset-l1 glass borderRadius center-align"
+                            class="col s5 offset-s1 l6 offset-l1 glass borderRadius center-align"
+                            style='margin-top: 4vh;'
                         >
                             <graph :props="props" :id_geste="selected_geste" :id_item="selected_item"></graph>
                         </div>
