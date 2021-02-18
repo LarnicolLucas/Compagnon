@@ -12,6 +12,8 @@ export default {
 		],
 		"chemin_avatar": "/images/avatar.jpg"
 	},
+
+	"echelle_de_notation": 4,
 	
 	"etapes_cursus_PST": [
 		{

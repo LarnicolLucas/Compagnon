@@ -1,11 +1,16 @@
+import svg_graph from './graph/svg_graph.js'
+
 const graph = {
     template: `
     <div
         :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode}"
     >
-        <div v-for="keys in points">
-            {{keys}}
-        </div>
+        <svg_graph :props="{
+            color: '#000',
+            width: 200,
+            height: 200,
+            coordonates: points
+        }"></svg_graph>
     </div>
     `,
     props: ['props','id_geste', 'id_item'],
@@ -14,7 +19,11 @@ const graph = {
         points: function(){
             const list_all_geste_by_inter = this.createNewListGeste(this.props.model.interventions);
 
-            return this.selectGesteById(list_all_geste_by_inter, this.id_item, this.id_geste)
+            let list = this.selectGesteById(list_all_geste_by_inter, this.id_item, this.id_geste);
+
+            console.log(this.convertListToCoordonate(list))
+
+            return this.convertListToCoordonate(list)
         }
         
     },
@@ -34,8 +43,29 @@ const graph = {
 
         selectGesteById: function(list, id_item, id_geste){
             return list.filter(el => el.id_geste == id_geste && el.id_item == id_item)
+        },
+
+        convertDate: function(date){
+            const array_date = date.split('/');
+            return array_date.reverse()
+        },
+
+        convertListToCoordonate: function(list){
+
+            let list_with_num_date = list.map(el => Object.assign(el, {date_num: (new Date(this.convertDate(el.date)[0], this.convertDate(el.date)[1], this.convertDate(el.date)[2] )).getTime()}));
+            let list_date = list_with_num_date.map(el=> el.date_num)
+            let max_x = list_date.reduce((acc, cur)=> Math.max(acc, cur));
+            let min_x = list_date.reduce((acc, cur)=> Math.min(acc, cur));
+            let time = max_x - min_x;
+            console.log(list_with_num_date, list_date, max_x, min_x, time)
+
+            return list_date.map(el => [((el.date_num - min_x) / time)*100,  (el.maitrise / this.props.echelle_de_notation) * 100])
+
         }
 
+    },
+    components: {
+        svg_graph: svg_graph
     }
 }
 
