@@ -13,16 +13,16 @@ const dashboard = {
         >
             <div class="borderRadius glass" style="position: absolute; top: 0; left: 0; width: 100%; height: 80vh;"></div>
             <div 
-                class="leftNavBar margTopBot hide-on-med-and-down"
+                class="leftNavBar hide-on-med-and-down"
                 :class='{
-                    "lightModeColor" : props.lightMode, 
+                    "lightModeColor2" : props.lightMode, 
                     "darkModeColor": props.darkMode,
                     "animationExtend": !state_menu_open,  
                     "animationNoExtend": state_menu_open
                 }'
+                style="height: 80vh;"
             >
                 <left_nav 
-                    style="z-index: 2;"
                     :props="{
                         color_contrast: props.color_contrast, 
                         color_primary: props.color_primary,

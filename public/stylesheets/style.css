@@ -112,10 +112,33 @@ main{
 }
 
 .darkModeColor {
-  background: #212121;
+  background: #141E30;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
-.lightModeColor{
-  background: #fff;
+
+/*.lightModeColor{
+  background: #00d2ff; 
+  background: -webkit-linear-gradient(to top, #3a7bd5, #00d2ff); 
+  background: linear-gradient(to top, #3a7bd5, #00d2ff); 
+
+}*/
+
+/*.lightModeColor{
+background: #A770EF;  
+background: -webkit-linear-gradient(to top, #FDB99B, #CF8BF3, #A770EF);  
+background: linear-gradient(to top, #FDB99B, #CF8BF3, #A770EF); 
+}
+*/
+.lightModeColor{background: #34e89e;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0f3443, #34e89e);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0f3443, #34e89e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+.lightModeColor2{
+  background: #FFF;
 }
 
 .darkModeTextColor {
@@ -126,19 +149,19 @@ main{
 }
 
 .onglet:hover{
-  color: purple
+  color: #AF4E61
 }
 
 .tabs .indicator {
-  background-color: purple;
+  background-color: #AF4E61;
 }
 
 polygon {
-  fill: purple;
-  opacity: 0.75;
+  fill: #AF4E61;
 }
 
 circle {
   fill: transparent;
   stroke: #999;
 }
+

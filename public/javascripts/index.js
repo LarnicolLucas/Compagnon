@@ -2,9 +2,17 @@ import ContainerDashBoard from './components/container_dash_board.js'
 
 import model from './data_compagnon.js'
 
+var palette0= {
+  primary: "#00d2ff",
+  contrast: "#FF9132"
+};
+var palette1= {
+  primary: "#cf8bf3",
+  contrast: "#95A357"
+};
 var palette= {
-  primary: "#aaaa39",
-  contrast: "purple"
+  primary: "#0f3443",
+  contrast: "#AF4E61"
 };
 
 var app = new Vue({

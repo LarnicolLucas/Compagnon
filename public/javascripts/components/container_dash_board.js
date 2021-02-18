@@ -8,7 +8,7 @@ const container = {
         <section 
             class="row transiAll"
             style="position: relative; overflow: hidden;"
-            :class="{'fixedHeight100': props.isLarge, 'darkModeColor': props.darkMode}"
+            :class="{'fixedHeight100': props.isLarge, 'darkModeColor': props.darkMode, 'lightModeColor': props.lightMode}"
         
         >
 

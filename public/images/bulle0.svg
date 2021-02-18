@@ -21,7 +21,7 @@
        inkscape:collect="always"
        id="linearGradient2192">
       <stop
-         style="stop-color:#915083;stop-opacity:1;"
+         style="stop-color:#af4e61;stop-opacity:1"
          offset="0"
          id="stop2188" />
       <stop
@@ -66,7 +66,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
