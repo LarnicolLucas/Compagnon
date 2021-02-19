@@ -64,7 +64,8 @@ const dashboard = {
                                     list_interventions: props.model.interventions,
                                     id_item: props.model.items_metier[selected_item].id,
                                     darkMode: props.darkMode,
-                                    lightMode: props.lightMode
+                                    lightMode: props.lightMode,
+                                    niveau_de_maitrise: props.niveau_de_maitrise
                                 }"
                             ></polygraph>
                         </div>
