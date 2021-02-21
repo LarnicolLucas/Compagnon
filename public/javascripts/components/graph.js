@@ -21,8 +21,6 @@ const graph = {
 
             let list = this.selectGesteById(list_all_geste_by_inter, this.id_item, this.id_geste);
 
-            console.log(this.convertListToCoordonate(list))
-
             return this.convertListToCoordonate(list)
         }
         
@@ -52,15 +50,20 @@ const graph = {
 
         convertListToCoordonate: function(list){
 
-            let list_with_num_date = list.map(el => Object.assign(el, {date_num: (new Date(this.convertDate(el.date)[0], this.convertDate(el.date)[1], this.convertDate(el.date)[2] )).getTime()}));
-            let list_date = list_with_num_date.map(el=> el.date_num)
-            let max_x = list_date.reduce((acc, cur)=> Math.max(acc, cur));
-            let min_x = list_date.reduce((acc, cur)=> Math.min(acc, cur));
-            let time = max_x - min_x;
-            console.log(list_with_num_date, list_date, max_x, min_x, time)
+            if(list.length < 2){
 
-            return list_date.map(el => [((el.date_num - min_x) / time)*100,  (el.maitrise / this.props.echelle_de_notation) * 100])
+                return [[0,0]];
 
+            } else {
+
+                let list_with_num_date = list.map(el => Object.assign(el, {date_num: (new Date(this.convertDate(el.date)[0], this.convertDate(el.date)[1], this.convertDate(el.date)[2] )).getTime()}));
+                let list_date = list_with_num_date.map(el=> el.date_num);
+                let max_x = list_date.reduce((acc, cur)=> Math.max(acc, cur));
+                let min_x = list_date.reduce((acc, cur)=> Math.min(acc, cur));
+                let time = max_x - min_x;
+                    
+                return list_with_num_date.map(el => [(((el.date_num - min_x) / time)*100).toFixed(0) * 1,  (el.maitrise / this.props.model.echelle_de_notation) * 100])
+            }
         }
 
     },
