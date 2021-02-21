@@ -8,7 +8,6 @@ const svg_graph = {
     props:["props"],
 	data: function(){
 		return {
-			coordonates: this.props.coordonates,
 			animated_coordonates: this.createPath(this.props.coordonates, this.props.width, this.props.height)
 			
 		}
@@ -16,7 +15,11 @@ const svg_graph = {
     computed: {
         path: function(){
 			return this.animated_coordonates;
-        }
+
+        },
+		coordonates: function(){
+			return this.props.coordonates
+		} 
     },
 	
 	 watch: {
