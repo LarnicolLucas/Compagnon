@@ -6,7 +6,7 @@ const graph = {
         :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode}"
     >
         <svg_graph :props="{
-            color: '#000',
+            color: props.color_contrast,
             width: 200,
             height: 200,
             coordonates: points
