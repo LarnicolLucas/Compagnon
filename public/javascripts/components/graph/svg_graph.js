@@ -1,7 +1,7 @@
 const svg_graph = {
     template: `
         <svg :width="props.width" :height="props.height" xmlns="http://www.w3.org/2000/svg">
-			<path :d="path" :stroke="props.color" fill="transparent"/>
+			<path :d="path" :stroke="props.color" fill="transparent" stroke-width="3"/>
         </svg>
     `,
     //{width, height, coordonates, color}
