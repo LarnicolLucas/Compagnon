@@ -1,8 +1,14 @@
 const svg_graph = {
     template: `
-        <svg :width="props.width" :height="props.height" xmlns="http://www.w3.org/2000/svg">
-			<path :d="path" :stroke="props.color" fill="transparent" stroke-width="3"/>
-        </svg>
+		<div>
+			<h6> {{props.titre}} </h6>
+			<svg :width="props.width" :height="props.height" xmlns="http://www.w3.org/2000/svg">
+				<path :d="path" :stroke="props.color" fill="transparent" stroke-width="3"/>
+				<g>
+					<path v-for="keys in list_legends" :d="keys.path" stroke="grey" fill="transparent"/>
+				</g>
+			</svg>
+		</div>
     `,
     //{width, height, coordonates, color}
     props:["props"],
@@ -19,7 +25,14 @@ const svg_graph = {
         },
 		coordonates: function(){
 			return this.props.coordonates
-		} 
+		},
+		list_legends: function(){
+			let res = [];
+			for(let i = 0; i< this.props.echelle_de_notation; i++){
+				res.push(null)
+			};
+			return res.map((el,i) => {return {path: `M 0 ${(this.props.height/this.props.echelle_de_notation)*(i+1)} H ${this.props.width}`, id: i}}) 
+		}
     },
 	
 	 watch: {

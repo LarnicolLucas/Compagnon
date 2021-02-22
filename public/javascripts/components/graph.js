@@ -9,7 +9,9 @@ const graph = {
             color: props.color_contrast,
             width: 200,
             height: 200,
-            coordonates: points
+            coordonates: points,
+            echelle_de_notation: props.model.echelle_de_notation,
+            titre: this.props.model.items_metier[id_item].list[id_geste].nom
         }"></svg_graph>
     </div>
     `,
