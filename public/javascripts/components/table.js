@@ -36,7 +36,8 @@ const table = {
 	mixins: [mixin_bilan_maitrise_geste],
 
 	mounted: function(){
-		this.table_elements = this.CreateBilan();
+
+		this.table_elements = this.CreateBilan(this.props.list_interventions, this.props.id_item, this.props.list_geste);
 	}
 }
 

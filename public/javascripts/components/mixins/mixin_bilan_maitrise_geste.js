@@ -50,11 +50,11 @@ const mixin_bilan_maitrise_geste = {
 			});
 		},
 		
-		CreateBilan: function() {
+		CreateBilan: function(interventions, id_item, id_geste) {
 			
-			const list_intervention_geste = this.initGesteIntervention(this.props.list_interventions, this.props.id_item);
+			const list_intervention_geste = this.initGesteIntervention(interventions, id_item);
 			const object_with_stat = this.initArrayStats(list_intervention_geste);
-			return this.initTableElement(this.props.list_geste, object_with_stat)
+			return this.initTableElement(id_geste, object_with_stat)
 		}
 		
 	}
