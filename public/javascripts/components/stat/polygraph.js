@@ -19,32 +19,39 @@ const polygraph = {
 			</g>
 		</svg>
 	`,
+	props:['props'],
+	data: function(){
+		return {
+			animated_coordonates: this.createPoints(this.props.points)
+		}
+	},
 	computed: {
 		stats: function(){
-			return this.convertStats();
+			return this.props.points;
 		},
 
         points: function() {
-            var total = this.stats.length;
+            return this.animated_coordonates
+        }
+    },
+	watch: {
+		stats: function(newValue){
+			gsap.to(this.$data, {duration: 0.7, animated_coordonates: this.createPoints(newValue) , ease: "elastic.out(1, 0.3)"});
+		}
+	},
+	methods:{
+		valueToPoint: axis_label.methods.valueToPoint,
+
+		createPoints: function(list){
+			var total = list.length;
 			const app = this;
-            return this.stats.map(function(stat, i) {
+            return list.map(function(stat, i) {
                 var point = app.valueToPoint(stat.maitrise, i, total);
                 return point.x + "," + point.y;
               })
               .join(" ");
-        }
-    },
-	props:['props'],
-
-	methods:{
-		valueToPoint: axis_label.methods.valueToPoint,
-		convertStats : function(){
-			const list = this.CreateBilan();
-			const list_without_null = list.filter(el => el.maitrise > 0);
-			return list_without_null.map(el => { return {nom: el.nom, maitrise: (el.maitrise / 4) * 100} })
-		}	
+		},
 	},
-	mixins: [mixin_bilan_maitrise_geste],
 	components: {
 		axis_label: axis_label
 	}

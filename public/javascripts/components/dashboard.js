@@ -3,6 +3,7 @@ import left_nav from './left_nav.js'
 import items_list from './items_list.js'
 import polygraph from './stat/polygraph.js'
 import graph from './graph.js'
+import stats from './stats.js'
 
 const dashboard = {
     template: `
@@ -58,16 +59,12 @@ const dashboard = {
                         <div
                             class="col s5 offset-s1 l4 offset-l1 glass borderRadius center-align"
                         >
-                            <polygraph 
+                            <stats 
 
-                                :props="{
-                                    list_geste: props.model.items_metier[selected_item].list,
-                                    list_interventions: props.model.interventions,
-                                    id_item: props.model.items_metier[selected_item].id,
-                                    darkMode: props.darkMode,
-                                    lightMode: props.lightMode
-                                }"
-                            ></polygraph>
+                                :props="props"
+                                :id_item="selected_item"
+                                :list_geste="props.model.items_metier[selected_item].list"
+                            ></stats>
                         </div>
 
                         <div
@@ -114,7 +111,8 @@ const dashboard = {
         card: card,
         items_list: items_list,
         polygraph: polygraph,
-        graph: graph
+        graph: graph,
+        stats: stats
 
     }
 }
