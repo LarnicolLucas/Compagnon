@@ -22,7 +22,7 @@ const container = {
             ></switch_button>
 
 
-            <dashboard class="col m12 l8 offset-l2" :props="props"></dashboard>
+            <dashboard style="padding: 0;" class="col m12 l8 offset-l2" :props="props"></dashboard>
         </section>
     `,
     methods:{
