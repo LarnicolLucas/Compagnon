@@ -9,10 +9,10 @@ const dashboard = {
     template: `
 
         <article 
-            class="fixedHeight80"
+            :class="{'fixedHeight80': props.isMobile}"
             style="margin-top: 10vh; display: flex; position: relative;"
         >
-            <div class="borderRadius glass" style="position: absolute; top: 0; left: 0; width: 100%; height: 80vh;"></div>
+            <div class="borderRadius glass hide-on-med-and-down" style="position: absolute; top: 0; left: 0; width: 100%; height: 80vh;"></div>
             <div 
                 class="leftNavBar hide-on-med-and-down"
                 :class='{
@@ -21,7 +21,7 @@ const dashboard = {
                     "animationExtend": !state_menu_open,  
                     "animationNoExtend": state_menu_open
                 }'
-                style="height: 80vh;"
+                style="height: 80vh; z-index: 100; margin_left: 0;"
             >
                 <left_nav 
                     :props="{
@@ -57,7 +57,7 @@ const dashboard = {
                     </div>    
                     <div class="row">
                         <div
-                            class="col s5 offset-s1 l4 offset-l1 glass borderRadius center-align"
+                            class="col s10 offset-s1 l4 offset-l1 glass borderRadius center-align"
                         >
                             <stats 
 
@@ -68,7 +68,7 @@ const dashboard = {
                         </div>
 
                         <div
-                            class="col s5 offset-s1 l5 offset-l1 glass borderRadius center-align"
+                            class="col s10 offset-s1 l5 offset-l1 glass borderRadius center-align"
                             style='margin-top: 5vh; height: 30vh;'
                         >
                             <graph :props="props" :id_geste="selected_geste" :id_item="selected_item"></graph>
