@@ -11,7 +11,7 @@ const dev_menu = {
                 cursor: pointer;
             "
             :style="{border: '1px solid '+props.color}"
-            :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode, 'darkModeColor': props.darkMode, 'lightModeColor': props.lightMode}"
+            :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode, 'darkModeColor': props.darkMode, 'lightModeColor2': props.lightMode}"
             class="transi valign-wrapper"
             @click="toggle"
         >
