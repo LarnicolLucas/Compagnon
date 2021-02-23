@@ -48,7 +48,6 @@ main{
 .leftNavBar{
   width: 20em;
   transition: all 0.3s ease-out;
-  margin-left: 3vh;
   border-radius: 1rem 0 0 1rem;
 }
 
@@ -131,9 +130,24 @@ background: -webkit-linear-gradient(to top, #FDB99B, #CF8BF3, #A770EF);
 background: linear-gradient(to top, #FDB99B, #CF8BF3, #A770EF); 
 }
 */
-.lightModeColor{background: #34e89e;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #0f3443, #34e89e);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #0f3443, #34e89e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+/*
+.lightModeColor{background: #34e89e;  /* fallback for old browsers 
+background: -webkit-linear-gradient(to right, #0f3443, #34e89e); 
+background: linear-gradient(to right, #0f3443, #34e89e);
+}
+*/
+/*
+.lightModeColor{
+background: #DD5E89;
+background: -webkit-linear-gradient(to right, #F7BB97, #DD5E89);
+background: linear-gradient(to right, #F7BB97, #DD5E89);
+}
+*/
+.lightModeColor{
+  background: #2BC0E4;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 
@@ -149,15 +163,15 @@ background: linear-gradient(to right, #0f3443, #34e89e); /* W3C, IE 10+/ Edge, F
 }
 
 .onglet:hover{
-  color: #AF4E61
+  color: #FF942A
 }
 
 .tabs .indicator {
-  background-color: #AF4E61;
+  background-color: #FF942A;
 }
 
 polygon {
-  fill: #AF4E61;
+  fill: #FF942A;
 }
 
 circle {
