@@ -1,6 +1,6 @@
 const switch_button = {
     template: `
-        <div class="switch">
+        <div class="switch" style="z-index: 101">
             <label>
             {{props.off}}
             <input  @click="clicked" type="checkbox">
