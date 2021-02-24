@@ -32,6 +32,9 @@ var app = new Vue({
         isLarge: true,
         isMobile: false,
 
+        width: null,
+        height: null,
+
         color_contrast: palette.contrast,
         color_primary: palette.primary,
 
@@ -44,14 +47,20 @@ var app = new Vue({
         this.params.darkMode = !this.params.darkMode
       },
       resizeAnalyse: function(e){
-        const width = e.currentTarget.screen.width
+        const width = e.currentTarget.screen.width;
+        const height = e.currentTarget.screen.height;
+
         if(width <= 992){
           this.params.isLarge = false;
           this.params.isMobile = true;
         } else {
           this.params.isLarge = true;
           this.params.isMobile = false;
-        }
+        };
+
+        this.params.width = width;
+        this.params.height = height;
+
       }
     },
     components: {
@@ -59,5 +68,16 @@ var app = new Vue({
     },
     directives: {
       resize: resizedirective
+    },
+    mounted: function(){
+      const e = {
+        currentTarget: {
+          screen: {
+            width: window.screen.width,
+            height: window.screen.height,
+          }
+        }
+      }
+      this.resizeAnalyse(e)
     }
   })
