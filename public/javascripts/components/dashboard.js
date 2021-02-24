@@ -4,6 +4,7 @@ import items_list from './items_list.js'
 import polygraph from './stat/polygraph.js'
 import graph from './graph.js'
 import stats from './stats.js'
+import resizedirective from './directive/resize.js'
 
 const dashboard = {
     template: `
@@ -114,7 +115,10 @@ const dashboard = {
         graph: graph,
         stats: stats
 
-    }
+    },
+	directives: {
+		resize : resizedirective
+	}
 }
 
 export default dashboard
