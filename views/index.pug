@@ -3,5 +3,5 @@ extends layout
 block content
   
   <main id="app">
-    <containerdashboard @switchclicked="changeMode" :props="params"></containerdashboard>
+    <containerdashboard v-resize="resizeAnalyse" @switchclicked="changeMode" :props="params"></containerdashboard>
   </main>

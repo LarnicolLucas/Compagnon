@@ -9,7 +9,7 @@ const dashboard = {
     template: `
 
         <article 
-            :class="{'fixedHeight80': props.isMobile}"
+            :class="{'fixedHeight80': props.isLarge}"
             style="margin-top: 10vh; display: flex; position: relative;"
         >
             <div class="borderRadius glass hide-on-med-and-down" style="position: absolute; top: 0; left: 0; width: 100%; height: 80vh;"></div>

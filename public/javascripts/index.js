@@ -1,4 +1,5 @@
 import ContainerDashBoard from './components/container_dash_board.js'
+import resizedirective from './components/directive/resize.js'
 
 import model from './data_compagnon.js'
 
@@ -41,9 +42,22 @@ var app = new Vue({
       changeMode: function(){
         this.params.lightMode = !this.params.lightMode;
         this.params.darkMode = !this.params.darkMode
+      },
+      resizeAnalyse: function(e){
+        const width = e.currentTarget.screen.width
+        if(width <= 992){
+          this.params.isLarge = false;
+          this.params.isMobile = true;
+        } else {
+          this.params.isLarge = true;
+          this.params.isMobile = false;
+        }
       }
     },
     components: {
       containerdashboard: ContainerDashBoard
+    },
+    directives: {
+      resize: resizedirective
     }
   })
