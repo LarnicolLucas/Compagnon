@@ -6,7 +6,7 @@ const polygraph = {
 		<svg class="responsive-img" width="200" height="200">
 			<g>
 				<polygon stroke-linejoin="round" :points="points"></polygon>
-				<circle cx="100" cy="100" r="80"></circle>
+				<circle v-for="keys in circleLegends" :cx="size_circle" :cy="size_circle" :r="keys.r"></circle>
 				<axis_label
 				v-for="(stat, index) in stats"
 				:key="index"
@@ -22,7 +22,8 @@ const polygraph = {
 	props:['props'],
 	data: function(){
 		return {
-			animated_coordonates: this.createPoints(this.props.points)
+			animated_coordonates: this.createPoints(this.props.points),
+			size_circle: 100
 		}
 	},
 	computed: {
@@ -32,7 +33,26 @@ const polygraph = {
 
         points: function() {
             return this.animated_coordonates
-        }
+        },
+		circleLegends: function(){
+
+			const recursiveFunction = (iteration, echelle, circle_size, array) => {
+				
+				if(iteration > echelle) {
+					return array
+				} else {
+					let res = array.concat({
+						id: iteration, 
+						r: ((circle_size*0.8) / echelle) * iteration
+					});
+
+					return recursiveFunction(iteration+1, echelle, circle_size, res)
+				}
+			}
+
+			return recursiveFunction(0, this.props.echelle_de_notation, this.size_circle, [])
+
+		}
     },
 	watch: {
 		stats: function(newValue){

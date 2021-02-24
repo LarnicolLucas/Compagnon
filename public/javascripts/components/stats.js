@@ -6,7 +6,8 @@ const stats = {
 		<polygraph :props="{
             darkMode: props.darkMode,
             lightMode: props.lightMode,
-			points: stats
+			points: stats,
+			echelle_de_notation: props.model.echelle_de_notation
         }"></polygraph>
 	`,
 	props: ["props", "id_item", "list_geste"],
