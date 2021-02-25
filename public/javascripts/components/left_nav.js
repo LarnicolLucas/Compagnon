@@ -1,6 +1,7 @@
 import dev_menu from './nav/dev_menu.js'
 import onglet from './nav/onglet.js'
 import footer from './nav/footer.js'
+import navigation from './nav/navigation.js'
 
 
 const left_nav = {
@@ -51,32 +52,8 @@ const left_nav = {
             menu_close : false,
             menu_open : true,
 
-            navigation: [
-              {
-                id:0,
-                nom: "Tableau de bord",
-                icon: "leaderboard",
-                init: false
-              },
-              {
-                id:1,
-                nom: "Historique des Interventions",
-                icon: "calendar_today",
-                init: false
-              },
-              {
-                id:2,
-                nom: "Cursus de Formation",
-                icon: "timeline",
-                init: false
-              },
-              {
-                id:3,
-                nom: "Items et Agents",
-                icon: "playlist_add",
-                init: false
-              },
-            ],
+            navigation: navigation,
+            
             footer: {
                 nom: "Footer",
                 icon: "forward",
