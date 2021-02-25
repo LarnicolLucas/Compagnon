@@ -1,7 +1,7 @@
 const axis_label = {
 	template: `
 		<text
-         :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode}"
+		 :style="colorText"
 		 :x="point.x" 
 		 :y="point.y"
 		>{{stat.nom}}</text>
@@ -21,7 +21,18 @@ const axis_label = {
 			this.total,
 			this.props.size
             );
-        }
+        },
+		colorText: function(){
+			if(this.props.darkMode == true){
+				return {
+					fill: "#fff"
+				}
+			} else if(this.props.lightMode == true) {
+				return {
+					fill: "#000"
+				}
+			}
+		}
     },
 	methods: {
 		valueToPoint: function(value, index, total, size) {
