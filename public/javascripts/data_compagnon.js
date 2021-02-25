@@ -66,39 +66,48 @@ export default {
 			"list": [
 				{
 					"id": 0,
-					"nom": "F100 : Première mise en service"
+					"nom": "F100 : Première mise en service",
+					"abreviation": "F100"
 				},
 				{
 					"id": 1,
-					"nom": "F120 : Mise en service sur installation existante"
+					"nom": "F120 : Mise en service sur installation existante",
+					"abreviation": "F120"
 				},
 				{
 					"id": 2,
-					"nom": "F140 : Résiliation"
+					"nom": "F140 : Résiliation",
+					"abreviation": "F140"
 				},
 				{
 					"id": 3,
-					"nom": "F160 : modifiation de formule tarifaire"
+					"nom": "F160 : modifiation de formule tarifaire",
+					"abreviation": "F160"
 				},
 				{
 					"id": 4,
-					"nom": "F170-1 : Modification de puissance souscrite simple"
+					"nom": "F170-1 : Modification de puissance souscrite simple",
+					"abreviation": "F170-1"
 				},
 				{
 					"id": 5,
-					"nom": "F170-2 : Modification de puissance souscrite / remplacements de TC"
+					"nom": "F170-2 : Modification de puissance souscrite / remplacements de TC",
+					"abreviation": "F170-2"
 				},
 				{
 					"id": 6,
-					"nom": "F200 : coupure non paiement - suite résiliation / Rétablissement"
+					"nom": "F200 : coupure non paiement - suite résiliation / Rétablissement",
+					"abreviation": "F200"
 				},
 				{
 					"id": 7,
-					"nom": "F450 : MSTPE"
+					"nom": "F450 : MSTPE",
+					"abreviation": "F450"
 				},
 				{
 					"id": 8,
-					"nom": "F800 : Raccordement provisoire pour une durée > 28 jours"
+					"nom": "F800 : Raccordement provisoire pour une durée > 28 jours",
+					"abreviation": "F800"
 				}
 			],
 		},
@@ -110,47 +119,58 @@ export default {
 			"list": [
 				{
 					"id":0,
-					"nom": "Pose Boitiesr IP (3G) / suppression BTR"
+					"nom": "Pose Boitiesr IP (3G) / suppression BTR",
+					"abreviation": "IP"
 				},
 				{
 					"id":1,
-					"nom": "Pose Boitiesr IP (4G) / Alim externe 220V / suppression BTR"
+					"nom": "Pose Boitiesr IP (4G) / Alim externe 220V / suppression BTR",
+					"abreviation": "IP 4G"
 				},
 				{
 					"id":2,
-					"nom": "Relève PME-PMI"
+					"nom": "Relève PME-PMI",
+					"abreviation": "Relève"
 				},
 				{
 					"id":3,
-					"nom": "Dépannage Télé-relève :  GSM / RTC / IP / Changement carte sim"
+					"nom": "Dépannage Télé-relève :  GSM / RTC / IP / Changement carte sim",
+					"abreviation": "Dépannage"
 				},
 				{
 					"id":4,
-					"nom": "Remplacement de compteurs PME-PMI (sans transposition)"
+					"nom": "Remplacement de compteurs PME-PMI (sans transposition)",
+					"abreviation": "Rplc Compteur"
 				},
 				{
 					"id":5,
-					"nom": "Remplacement de compteurs PME-PMI (avec transposition)"
+					"nom": "Remplacement de compteurs PME-PMI (avec transposition)",
+					"abreviation": "Chgt Compteur"
 				},
 				{
 					"id":6,
-					"nom": "Remplacement d'armoire C4"
+					"nom": "Remplacement d'armoire C4",
+					"abreviation": "Rplc armoire"
 				},
 				{
 					"id":7,
-					"nom": "Passage VB"
+					"nom": "Passage VB",
+					"abreviation": "VB"
 				},
 				{
 					"id":8,
-					"nom": "TIC & asservissements"
+					"nom": "TIC & asservissements",
+					"abreviation": "Asser"
 				},
 				{
 					"id":9,
-					"nom": "Dépannage appareils de comptage PME-PMI"
+					"nom": "Dépannage appareils de comptage PME-PMI",
+					"abreviation": "Dépannage Cpt"
 				},
 				{
 					"id":10,
-					"nom": "Passage de segment C4<-->C5"
+					"nom": "Passage de segment C4<-->C5",
+					"abreviation": "C4<>C5"
 				}
 			],
 		},
@@ -161,7 +181,8 @@ export default {
 			"list": [
 				{
 					"id": 0,
-					"nom" : "relation client"
+					"nom" : "relation client",
+					"abreviation": "Clientel"
 				}
 			]
 		}
