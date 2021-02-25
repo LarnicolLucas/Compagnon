@@ -2,7 +2,13 @@ body {
   padding: 0px;
   margin: 0px;
   font-family: 'Reem Kufi', sans-serif;
+}
+
+.fontLarge {
   font-size: 10px;
+}
+.fontMobile{
+  font-size: 30px;
 }
 
 strong{

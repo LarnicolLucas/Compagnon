@@ -47,10 +47,10 @@ var app = new Vue({
         this.params.darkMode = !this.params.darkMode
       },
       resizeAnalyse: function(e){
-        const width = e.currentTarget.screen.width;
-        const height = e.currentTarget.screen.height;
+        const width = window.screen.width;
+        const height = window.screen.height;
 
-        if(width <= 992){
+        if(width <= 992 || window.innerWidth <= 992){
           this.params.isLarge = false;
           this.params.isMobile = true;
         } else {
@@ -78,6 +78,6 @@ var app = new Vue({
           }
         }
       }
-      this.resizeAnalyse(e)
+      this.resizeAnalyse(e);
     }
   })
