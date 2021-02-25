@@ -14,7 +14,10 @@ const card = {
 
             <description_card :props="props"></description_card>
         </section>
-        <article class="glass" style="position: absolute; top: 1em; right: -2em; border-radius: 5px;">
+        <article 
+            class="glass" style="position: absolute; top: 1em; right: -2em; border-radius: 5px;"
+            :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode}"
+        >
                 <h6>{{props.model.agent.habilitation}}</h6>
         </article>
     </div>
