@@ -73,7 +73,7 @@ const dashboard = {
 
                         <div
                             class="col s10 offset-s1 l5 offset-l1 glass borderRadius center-align"
-                            style='margin-top: 5vh; height: 30vh;'
+                            style='margin-top: 2vh; height: 30vh;'
                         >
                             <graph :props="props" :id_geste="selected_geste" :id_item="selected_item"></graph>
                         </div>
