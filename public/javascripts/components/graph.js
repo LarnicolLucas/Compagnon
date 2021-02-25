@@ -4,18 +4,18 @@ const graph = {
     template: `
     <div
         :class="{'darkModeTextColor': props.darkMode, 'lightModeTextColor': props.lightMode}"
-    >
+    ><span class="hide">{{size_container}}</span>
         <svg_graph :props="{
             color: props.color_contrast,
-            width: 200,
-            height: 200,
+            width: size.width,
+            height: size.height,
             coordonates: points,
             echelle_de_notation: props.model.echelle_de_notation,
             titre: this.props.model.items_metier[id_item].list[id_geste].nom
         }"></svg_graph>
     </div>
     `,
-    props: ['props','id_geste', 'id_item'],
+    props: ['props','id_geste', 'id_item', 'size_container'],
     computed: {
 
         points: function(){
@@ -24,7 +24,11 @@ const graph = {
             let list = this.selectGesteById(list_all_geste_by_inter, this.id_item, this.id_geste);
 
             return this.convertListToCoordonate(list)
-        }
+        },
+
+        size: function(){
+            return { width: (this.size_container.width * 0.6), height: (this.size_container.height * 0.6) }
+        },
         
     },
     methods: {

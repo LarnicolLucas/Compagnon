@@ -74,8 +74,15 @@ const dashboard = {
                         <div
                             class="col s10 offset-s1 l5 offset-l1 glass borderRadius center-align"
                             style='margin-top: 2vh; height: 30vh;'
+                            v-resize="changeSizeGraph"
+                            ref="graph_container"
                         >
-                            <graph :props="props" :id_geste="selected_geste" :id_item="selected_item"></graph>
+                            <graph 
+                                :props="props" 
+                                :id_geste="selected_geste" 
+                                :id_item="selected_item"
+                                :size_container="graph_size_container"
+                            ></graph>
                         </div>
 
 
@@ -91,7 +98,8 @@ const dashboard = {
             selected_item: 0,
             selected_geste: 0,
 
-            stat_size_container: null 
+            stat_size_container: 0,
+            graph_size_container: {width: 0, height: 0} 
         }
     },
 
@@ -115,7 +123,13 @@ const dashboard = {
 
         changeSizeStat: function(event, el){
             this.stat_size_container = el.offsetWidth
-        }
+        },
+        changeSizeGraph: function(event, el){
+            this.graph_size_container = {
+                width: el.offsetWidth ,
+                height: el.offsetHeight
+            }
+        },
     },
     components:{
         left_nav: left_nav,
@@ -130,7 +144,11 @@ const dashboard = {
 		resize : resizedirective
 	},
     mounted: function(){
-        this.stat_size_container = this.$refs.stat_container.offsetWidth
+        this.stat_size_container = this.$refs.stat_container.offsetWidth;
+        this.graph_size_container = {
+            width: this.$refs.graph_container.offsetWidth,
+            height: this.$refs.graph_container.offsetHeight
+        };
     }
 }
 
