@@ -1,24 +1,40 @@
+import navigation from './nav/navigation.js'
+
 const navbar = {
     template : `
     <div>
 
         <ul id="slide-out" class="sidenav" ref="navBarMobile">
+
             <li><div class="user-view">
                 <div class="background">
-                <img src="images/office.jpg">
+                <img class="responsive-img" src="images/background_svg.svg">
                 </div>
-                <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-                <a href="#name"><span class="white-text name">John Doe</span></a>
-                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                <a href="#user"><img class="circle" src="images/avatar.jpg "></a>
+                <a href="#name"><span class="white-text name">{{props.nom}}</span></a>
             </div></li>
-            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-            <li><a href="#!">Second Link</a></li>
-            <li><div class="divider"></div></li>
-            <li><a class="subheader">Subheader</a></li>
-            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+            <li 
+                v-for="keys in navigation"
+                :key="keys.id"
+            >
+                <a>
+                    <i class="material-icons">{{keys.icon}}</i>
+
+                        {{keys.nom}}
+                </a>
+            </li>
+
+            <img class="responsive-img circle" src="images/illustration_footer_nav.svg"/>
+      
         </ul>
     </div>
     `,
+    props: ["props"],
+    data: function(){
+        return {
+            navigation: navigation
+        }
+    },
     methods: {
         initNavbar : function(){
             M.Sidenav.init(this.$refs.navBarMobile);

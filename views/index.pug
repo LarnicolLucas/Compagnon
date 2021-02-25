@@ -9,7 +9,7 @@ block content
       <nav class="contrastBackground"><i data-target="slide-out" class="material-icons sidenav-trigger">menu</i></nav>
     </div>
 
-    <navbarmobile></navbarmobile>
+    <navbarmobile :props="{nom: params.model.agent.nom}"></navbarmobile>
 
     <containerdashboard v-resize="resizeAnalyse" @switchclicked="changeMode" :props="params"></containerdashboard>
 
