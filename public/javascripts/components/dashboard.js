@@ -50,6 +50,7 @@ const dashboard = {
 
                         <div 
                             class="col s10 offset-s1 l6 offset-l1"
+                            style="position: relative;"
                         >
                             <items_list :props="props" @itemclicked="changeItem" @gesteclicked="changeGeste"></items_list>
                         </div>
