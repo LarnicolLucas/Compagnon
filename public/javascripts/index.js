@@ -1,6 +1,6 @@
 import ContainerDashBoard from './components/container_dash_board.js'
 import resizedirective from './components/directive/resize.js'
-
+import navbar from './components/mobil_side_navbar.js'
 import model from './data_compagnon.js'
 
 var palette0= {
@@ -64,7 +64,8 @@ var app = new Vue({
       }
     },
     components: {
-      containerdashboard: ContainerDashBoard
+      containerdashboard: ContainerDashBoard,
+      navbarmobile: navbar
     },
     directives: {
       resize: resizedirective
@@ -79,5 +80,6 @@ var app = new Vue({
         }
       }
       this.resizeAnalyse(e);
+      M.Sidenav.init(document.querySelectorAll('.sidenav'));
     }
   })

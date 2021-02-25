@@ -3,5 +3,15 @@ extends layout
 block content
   
   <main id="app" style="height: 100vh;">
+
+
+    <div class="navbar-fixed"  v-show="params.isMobile">
+      <nav><i data-target="slide-out" class="material-icons sidenav-trigger">menu</i></nav>
+    </div>
+
+    <navbarmobile></navbarmobile>
+
     <containerdashboard v-resize="resizeAnalyse" @switchclicked="changeMode" :props="params"></containerdashboard>
+
+    
   </main>
