@@ -29,7 +29,7 @@ const graph = {
         },
 
         size: function(){
-            return { width: (this.size_container.width * 0.6), height: (this.size_container.height * 0.6) }
+            return { width: (this.size_container.width * 0.5), height: (this.size_container.height * 0.5) }
         },
         
     },

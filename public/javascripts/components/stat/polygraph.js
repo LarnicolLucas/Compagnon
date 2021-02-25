@@ -53,7 +53,7 @@ const polygraph = {
 
 		},
 		size_circle: function(){
-			return this.props.size_container * 0.8
+			return this.props.size_container * 0.6
 		}
     },
 	watch: {
