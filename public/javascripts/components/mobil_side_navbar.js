@@ -4,21 +4,22 @@ const navbar = {
     template : `
     <div>
 
-        <ul id="slide-out" class="sidenav" ref="navBarMobile">
+        <ul id="slide-out" class="sidenav" ref="navBarMobile" style="width: 80vw; font-size: 35px;">
 
             <li><div class="user-view">
                 <div class="background">
                 <img class="responsive-img" src="images/background_svg.svg">
                 </div>
-                <a href="#user"><img class="circle" src="images/avatar.jpg "></a>
-                <a href="#name"><span class="white-text name">{{props.nom}}</span></a>
+                <a href="#user"><img style="width: 120px; height: 120px;" class="circle" src="images/avatar.jpg "></a>
+                <a href="#name"><span style="font-size: 70px; padding: 50px;" class="white-text name">{{props.nom}}</span></a>
             </div></li>
             <li 
                 v-for="keys in navigation"
                 :key="keys.id"
+                style="margin-top: 80px;"
             >
-                <a>
-                    <i class="material-icons">{{keys.icon}}</i>
+                <a style="font-size: 50px; margin: 50px;">
+                    <i style="font-size: 50px;" class="material-icons">{{keys.icon}}</i>
 
                         {{keys.nom}}
                 </a>
