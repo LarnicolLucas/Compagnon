@@ -3,14 +3,17 @@ import polygraph from './stat/polygraph.js'
 
 const stats = {
 	template: `
+
 		<polygraph :props="{
             darkMode: props.darkMode,
             lightMode: props.lightMode,
 			points: stats,
-			echelle_de_notation: props.model.echelle_de_notation
+			echelle_de_notation: props.model.echelle_de_notation,
+			size_container: size_container
         }"></polygraph>
+
 	`,
-	props: ["props", "id_item", "list_geste"],
+	props: ["props", "id_item", "list_geste", "size_container"],
 	computed : {
 		stats: function() {
 

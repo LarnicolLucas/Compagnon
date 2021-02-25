@@ -59,12 +59,15 @@ const dashboard = {
                     <div class="row">
                         <div
                             class="col s10 offset-s1 l4 offset-l1 glass borderRadius center-align"
+                            v-resize="changeSizeStat"
+                            ref="stat_container"
                         >
                             <stats 
 
                                 :props="props"
                                 :id_item="selected_item"
                                 :list_geste="props.model.items_metier[selected_item].list"
+                                :size_container="stat_size_container"
                             ></stats>
                         </div>
 
@@ -86,9 +89,12 @@ const dashboard = {
         return{
             state_menu_open : true,
             selected_item: 0,
-            selected_geste: 0
+            selected_geste: 0,
+
+            stat_size_container: null 
         }
     },
+
     methods: {
         openmenu: function(){
 
@@ -105,6 +111,10 @@ const dashboard = {
 
         changeGeste: function(e){
             this.selected_geste = e;
+        },
+
+        changeSizeStat: function(event, el){
+            this.stat_size_container = el.offsetWidth
         }
     },
     components:{
@@ -118,7 +128,10 @@ const dashboard = {
     },
 	directives: {
 		resize : resizedirective
-	}
+	},
+    mounted: function(){
+        this.stat_size_container = this.$refs.stat_container.offsetWidth
+    }
 }
 
 export default dashboard
