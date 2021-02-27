@@ -7,21 +7,21 @@ const dashboard = {
     template: `
 
         <article 
-            class="fixedHeight80"
+            :class="{'fixedHeight80': props.isLarge}"
             style="margin-top: 10vh; display: flex; position: relative;"
         >
-            <div class="borderRadius glass" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+            <div class="borderRadius glass hide-on-med-and-down" style="position: absolute; top: 0; left: 0; width: 100%; height: 80vh;"></div>
             <div 
-                class="leftNavBar margTopBot hide-on-med-and-down"
+                class="leftNavBar hide-on-med-and-down"
                 :class='{
-                    "lightModeColor" : props.lightMode, 
+                    "lightModeColor2" : props.lightMode, 
                     "darkModeColor": props.darkMode,
                     "animationExtend": !state_menu_open,  
                     "animationNoExtend": state_menu_open
                 }'
+                style="height: 80vh; z-index: 100; margin_left: 0;"
             >
                 <left_nav 
-                    style="z-index: 2;"
                     :props="{
                         color_contrast: props.color_contrast, 
                         color_primary: props.color_primary,
@@ -38,19 +38,23 @@ const dashboard = {
 
 
                         <div 
-                            class="col s10 offset-s1 l3 offset-l1"
-                            style="margin-top: -10vh; position: relative;"
+                            class="col s10 offset-s1 l4 offset-l1"
+                            style="margin-top: -6vh; position: relative;"
                         >
                             <card :props="props"></card>
                         </div>
 
 
                         <div 
-                            class="col s10 offset-s1 l5 offset-l2"
+                            class="col s10 offset-s1 l6 offset-l1"
+                            style="position: relative;"
                         >
-                            <items_list :props="props" @itemclicked="changeItem"></items_list>
+                            <items_list :props="props" @itemclicked="changeItem" @gesteclicked="changeGeste"></items_list>
                         </div>
 
+
+                    </div>    
+                    <div class="row">
                         <div
                             class="col s10 offset-s1 l4 offset-l1 glass borderRadius center-align"
                             v-resize="changeSizeStat"
@@ -78,6 +82,7 @@ const dashboard = {
                                 :size_container="graph_size_container"
                             ></graph>
                         </div>
+
 
                     </div>
             </aside>
