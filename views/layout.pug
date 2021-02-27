@@ -15,6 +15,9 @@ html
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+    script(type="text/javascript").
+      const interventions_serv= !{JSON.stringify(interventions)};
+    
     script(src="/javascripts/vue.js")
     script(type="module" src="/javascripts/index.js")
 

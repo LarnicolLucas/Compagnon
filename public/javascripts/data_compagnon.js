@@ -188,7 +188,8 @@ export default {
 		}
 	],
 	
-	"interventions": [
+	"interventions": []
+	/*[
 		{
 			"id": 0, 
 			"date": "30/12/2020", 
@@ -701,5 +702,5 @@ export default {
 				],
 				"commentaire": "RAS"
 			}
-	]	
+	]*/
 }
