@@ -51,23 +51,32 @@ const dashboard = {
                             <items_list :props="props" @itemclicked="changeItem"></items_list>
                         </div>
 
+                        <div
+                            class="col s10 offset-s1 l4 offset-l1 glass borderRadius center-align"
+                            v-resize="changeSizeStat"
+                            ref="stat_container"
+                        >
+                            <stats 
 
-                        
+                                :props="props"
+                                :id_item="selected_item"
+                                :list_geste="props.model.items_metier[selected_item].list"
+                                :size_container="stat_size_container"
+                            ></stats>
+                        </div>
 
                         <div
-                            class="col s5 offset-s1 l3 offset-l2 glass borderRadius center-align"
+                            class="col s10 offset-s1 l5 offset-l1 glass borderRadius center-align"
+                            style='margin-top: 2vh; height: 30vh;'
+                            v-resize="changeSizeGraph"
+                            ref="graph_container"
                         >
-                            <polygraph 
-
-                                :props="{
-                                    list_geste: props.model.items_metier[selected_item].list,
-                                    list_interventions: props.model.interventions,
-                                    id_item: props.model.items_metier[selected_item].id,
-                                    darkMode: props.darkMode,
-                                    lightMode: props.lightMode,
-                                    niveau_de_maitrise: props.niveau_de_maitrise
-                                }"
-                            ></polygraph>
+                            <graph 
+                                :props="props" 
+                                :id_geste="selected_geste" 
+                                :id_item="selected_item"
+                                :size_container="graph_size_container"
+                            ></graph>
                         </div>
 
                     </div>
