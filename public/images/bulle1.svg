@@ -8,9 +8,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="161.47302mm"
-   height="144.11493mm"
-   viewBox="0 0 161.47302 144.11493"
+   width="148.86913mm"
+   height="148.86913mm"
+   viewBox="0 0 148.86912 148.86913"
    version="1.1"
    id="svg964"
    sodipodi:docname="bulle1.svg"
@@ -19,24 +19,24 @@
      id="defs958">
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient2192">
+       id="linearGradient841">
       <stop
-         style="stop-color:#ff942a;stop-opacity:1"
+         style="stop-color:#f8b500;stop-opacity:1"
          offset="0"
-         id="stop2188" />
+         id="stop837" />
       <stop
-         style="stop-color:#915083;stop-opacity:0;"
+         style="stop-color:#fceabb;stop-opacity:1"
          offset="1"
-         id="stop2190" />
+         id="stop839" />
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient2192"
-       id="linearGradient2194"
-       x1="137.64381"
-       y1="125.64915"
-       x2="232.83398"
-       y2="12.326863"
+       xlink:href="#linearGradient841"
+       id="linearGradient843"
+       x1="69.222801"
+       y1="137.38068"
+       x2="218.09193"
+       y2="137.38068"
        gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
@@ -47,8 +47,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="169.08409"
-     inkscape:cy="259.58849"
+     inkscape:cx="33.723675"
+     inkscape:cy="247.46668"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -75,10 +75,12 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-47.841246,-38.357322)">
-    <path
-       style="fill:url(#linearGradient2194);fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 47.841246,131.22934 c 0,0 93.009794,-36.34866 133.100224,-84.457172 C 221.0319,-1.3363476 213.01381,172.12157 191.36498,181.47601 169.71615,190.83044 47.841246,131.22934 47.841246,131.22934 Z"
-       id="path2186" />
+     transform="translate(-69.222801,-62.946114)">
+    <circle
+       style="opacity:1;fill:url(#linearGradient843);fill-opacity:1;stroke-width:0.165"
+       id="path12"
+       cx="143.65736"
+       cy="137.38068"
+       r="74.434563" />
   </g>
 </svg>

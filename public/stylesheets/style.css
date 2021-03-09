@@ -150,10 +150,18 @@ background: -webkit-linear-gradient(to right, #F7BB97, #DD5E89);
 background: linear-gradient(to right, #F7BB97, #DD5E89);
 }
 */
+/*
 .lightModeColor{
-  background: #2BC0E4;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #2BC0E4;
+  background: -webkit-linear-gradient(to bottom, #EAECC6, #2BC0E4); 
+  background: linear-gradient(to bottom, #EAECC6, #2BC0E4);
+}
+*/
+.lightModeColor{
+  background: #fceabb;
+  background: -webkit-linear-gradient(to right, #f8b500, #fceabb);
+  background: linear-gradient(to right, #f8b500, #fceabb);
+  
 }
 
 
@@ -169,23 +177,23 @@ background: linear-gradient(to right, #F7BB97, #DD5E89);
 }
 
 .onglet:hover{
-  color: #FF942A
+  color: #878BAD
 }
 
 .contrastBackground {
-  background-color: #FF942A;
+  background-color: #878BAD;
 }
 
 .tabs .indicator {
-  background-color: #FF942A;
+  background-color: #878BAD;
 }
 
 polygon {
-  fill: #FF942A;
+  fill: #878BAD;
 }
 
 .selectGeste:hover{
-  color: #FF942A;
+  color: #878BAD;
 }
 
 circle {

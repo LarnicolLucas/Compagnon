@@ -20,6 +20,7 @@ const container = {
 
         <figure style='position: absolute; top:0; left: -10%; width: 50%;'><img class="responsive-img" src="/images/bulle0.svg"/></figure>
         <figure style='position: absolute; top: -30%; left: 60%; width: 50%;'><img class="responsive-img" src="/images/bulle1.svg"/></figure>
+        <figure style='position: absolute; top: 50%; left: calc(50% - 120px); width: 50%;'><img class="responsive-img" src="/images/bulle3.svg"/></figure>
 
             <switch_button 
                 @switchclicked="changeMode" 

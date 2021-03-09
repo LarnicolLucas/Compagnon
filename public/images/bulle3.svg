@@ -8,12 +8,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="180.13966mm"
-   height="180.13966mm"
-   viewBox="0 0 180.13967 180.13967"
+   width="106.64054mm"
+   height="106.64054mm"
+   viewBox="0 0 106.64054 106.64054"
    version="1.1"
    id="svg964"
-   sodipodi:docname="bulle0.svg"
+   sodipodi:docname="bulle3.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <defs
      id="defs958">
@@ -33,12 +33,12 @@
        inkscape:collect="always"
        xlink:href="#linearGradient841"
        id="linearGradient843"
-       x1="35.012314"
-       y1="118.16641"
-       x2="192.96861"
-       y2="118.16641"
+       x1="69.222801"
+       y1="137.38068"
+       x2="218.09193"
+       y2="137.38068"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.1404399,0,0,1.1404399,-27.100498,-27.686968)" />
+       gradientTransform="matrix(0.71633752,0,0,0.71633752,61.864497,60.084036)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -48,8 +48,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="441.32016"
-     inkscape:cy="340.29057"
+     inkscape:cx="-125.88041"
+     inkscape:cy="87.862596"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -58,7 +58,8 @@
      inkscape:window-height="1002"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     showguides="false" />
   <metadata
      id="metadata961">
     <rdf:RDF>
@@ -67,7 +68,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -75,12 +76,12 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-12.828949,-17.004898)">
+     transform="translate(-111.45138,-105.17469)">
     <circle
-       style="opacity:1;fill:url(#linearGradient843);fill-opacity:1;stroke-width:0.188173"
+       style="opacity:1;fill:url(#linearGradient843);fill-opacity:1;stroke-width:0.118196"
        id="path12"
-       cx="102.89878"
-       cy="107.07473"
-       r="90.069832" />
+       cx="164.77165"
+       cy="158.49496"
+       r="53.320271" />
   </g>
 </svg>

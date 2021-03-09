@@ -7,7 +7,7 @@ const footer = {
             </figcaption>
 
             <figure class="col s12">
-                <img class="circle responsive-img" alt="Illustration bas de page navigation" src="/images/illustration_footer_nav.svg"/>
+                <img class="responsive-img" alt="Illustration bas de page navigation" src="/images/illustration_footer_nav.svg"/>
             </figure>
         </article>
     `
