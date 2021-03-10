@@ -20,12 +20,12 @@ var palette3= {
   contrast: "#9FE160"
 };
 var palette4= {
-  primary: "#f8b500",
+  primary: "#2BC0E4",
   contrast: "#FF942A"
 };
 
 var palette= {
-  primary: "#2BC0E4",
+  primary: "#f8b500",
   contrast: "#878BAD"
 };
 
