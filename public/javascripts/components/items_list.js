@@ -52,8 +52,8 @@ const items_list = {
     data: function(){
         return {
             colorTabs: {
-                "C4": "#878BAD",
-                "C1/C2/C3": "#878BAD",
+                "C4": "#FFB66A",
+                "C1/C2/C3": "#FFB66A",
             }
         }
     },

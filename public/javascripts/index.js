@@ -24,9 +24,14 @@ var palette4= {
   contrast: "#FF942A"
 };
 
-var palette= {
+var palette5= {
   primary: "#f8b500",
   contrast: "#878BAD"
+};
+
+var palette= {
+  primary: "#6DD5FA",
+  contrast: "#FFB66A"
 };
 
 var app = new Vue({
