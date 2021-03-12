@@ -74,7 +74,7 @@ const dashboard = {
 
                         <div
                             class="col s10 offset-s1 l5 offset-l1 glass borderRadius center-align"
-                            style='margin-top: 2vh; height: 30vh;'
+                            style='height: 30vh;'
                             v-resize="changeSizeGraph"
                             ref="graph_container"
                         >
