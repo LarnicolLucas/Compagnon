@@ -9,23 +9,30 @@ const graph = {
             color: props.color_contrast,
             width: size.width,
             height: size.height,
-            coordonates: points,
             echelle_de_notation: props.model.echelle_de_notation,
-            titre: this.props.model.items_metier[id_item].list[id_geste].nom
+            titre: this.props.model.items_metier[id_item].list[id_geste].nom,
+            
+            list_inter: list_inter
         }"></svg_graph>
     </div>
     `,
     props: ['props','id_geste', 'id_item', 'size_container'],
     computed: {
 
-        points: function(){
-            const list_all_geste_by_inter = this.createNewListGeste(this.props.model.interventions);
+        list_inter: function(){
 
-            const list = this.selectGesteById(list_all_geste_by_inter, this.id_item, this.id_geste);
+            const list_all_geste_by_inter_with_date = this.createNewListGeste(this.props.model.interventions, this.addDateToGeste);
+            const list_with_numeric_date = this.addNumericDateToListObject(list_all_geste_by_inter_with_date, this.convertDate);
+            const list_by_geste_and_item_and_numeric_date = this.selectGesteById(list_with_numeric_date, this.id_item, this.id_geste);
 
-            const list_coordonates = this.convertListToCoordonate(list);
 
-            return list_coordonates
+            const max_min = this.findMaxAndMin(list_with_numeric_date);
+
+            return {
+                list : list_by_geste_and_item_and_numeric_date,
+                first_date : max_min.min,
+                last_date: max_min.max
+            }
         },
 
         size: function(){
@@ -39,12 +46,14 @@ const graph = {
             return intervention.geste_metier.map(el => Object.assign(el, {date : intervention.date}))
         },
 
-        createNewListGeste: function(interventions) {
-            let res = [];
-            interventions.forEach(el => {
-                res = res.concat(this.addDateToGeste(el));
-            });
-            return res
+        createNewListGeste: function(interventions, fn) {
+            return interventions.reduce((acc, cur, i)=> {
+                if(i === 1){
+                    return fn(acc)
+                } else {
+                    return [...acc, ...fn(cur)]
+                }
+            })
         },
 
         selectGesteById: function(list, id_item, id_geste){
@@ -54,6 +63,10 @@ const graph = {
         convertDate: function(date){
             const array_date = date.split('/');
             return array_date.reverse()
+        },
+
+        addNumericDateToListObject: function(list_of_object, fn){
+            return list_of_object.map(el => Object.assign(el, {date_num: (new Date(fn(el.date)[0], fn(el.date)[1], fn(el.date)[2] )).getTime()}));
         },
 
         findMaxAndMin: function(list_of_object){
@@ -66,31 +79,7 @@ const graph = {
                 max: max,
                 min: min
             }
-        },
-
-        addNumericDateToListObject: function(list_of_object){
-            return list_of_object.map(el => Object.assign(el, {date_num: (new Date(this.convertDate(el.date)[0], this.convertDate(el.date)[1], this.convertDate(el.date)[2] )).getTime()}));
-        },
-
-        convertListToCoordonate: function(list){
-
-            if(list.length < 2){
-
-                return [[0,0]];
-
-            } else {
-
-                let list_with_num_date = this.addNumericDateToListObject(list);
-                const max_min = this.findMaxAndMin(list_with_num_date);
-                const max_x = max_min.max;
-                const min_x = max_min.min;
-
-                let time = max_x - min_x;
-                    
-                return list_with_num_date.map(el => [(((el.date_num - min_x) / time)*100).toFixed(0) * 1,  (el.maitrise / this.props.model.echelle_de_notation) * 100])
-            }
         }
-
     },
     components: {
         svg_graph: svg_graph
