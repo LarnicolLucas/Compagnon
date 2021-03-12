@@ -93,7 +93,5 @@ var app = new Vue({
       this.resizeAnalyse(e);
       M.Sidenav.init(document.querySelectorAll('.sidenav'));
       this.params.model.interventions = interventions_serv;
-
-      console.log(this.params.model.interventions)
     }
   })
