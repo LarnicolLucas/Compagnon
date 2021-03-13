@@ -25,7 +25,6 @@ const graph = {
             const list_with_numeric_date = this.addNumericDateToListObject(list_all_geste_by_inter_with_date, this.convertDate);
             const list_by_geste_and_item_and_numeric_date = this.selectGesteById(list_with_numeric_date, this.id_item, this.id_geste);
 
-
             const max_min = this.findMaxAndMin(list_with_numeric_date);
 
             return {
@@ -61,12 +60,16 @@ const graph = {
         },
 
         convertDate: function(date){
-            const array_date = date.split('/');
+            let array_date = date.split('/');
+            array_date.reverse()
             return array_date.reverse()
         },
 
         addNumericDateToListObject: function(list_of_object, fn){
-            return list_of_object.map(el => Object.assign(el, {date_num: (new Date(fn(el.date)[0], fn(el.date)[1], fn(el.date)[2] )).getTime()}));
+            return list_of_object.map(el => {
+                const date_split = fn(el.date);
+                return Object.assign(el, {date_num: (new Date(`${date_split[0]}-${date_split[1]}-${date_split[2]}`)).getTime()})
+            })
         },
 
         findMaxAndMin: function(list_of_object){
