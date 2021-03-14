@@ -3,28 +3,45 @@ const svg_graph = {
 		<div>
 			<h6> {{props.titre}} </h6>
 			<svg :width="props.width" :height="props.height" xmlns="http://www.w3.org/2000/svg">
-				<path :d="path" :stroke="props.color" fill="transparent" stroke-width="3"/>
+
+				<rect 
+					v-for="keys in path"
+					:key="keys.id"
+					:y="keys.height"
+					:x="keys.posX"
+					:fill="props.color" :height="props.height" :width="width_rect" rx="2" ry="2" 
+				/>
 				<g>
+
 					<path v-for="keys in list_legends" :d="keys.path" stroke="grey" fill="transparent"/>
+					<path :d=" 'M 0 '+this.props.height +' V 0'" stroke="grey" fill="transparent"/>
+
 				</g>
 			</svg>
 		</div>
     `,
-    //{width, height, coordonates, color}
+    //{width, height, list_inter, color}
     props:["props"],
 	data: function(){
 		return {
-			animated_coordonates: this.createPath(this.props.coordonates, this.props.width, this.props.height)
+
+			animated_coordonates: this.convertToHeight(this.props.list_inter, this.props.height, this.props.width, this.props.echelle_de_notation)
 			
 		}
 	},
     computed: {
+		days_number : function(){
+			return (this.props.list_inter.last_date - this.props.list_inter.first_date) / (1000 * 3600 * 24);
+		},
+		width_rect : function(){
+			const marg = 0.01;
+			return this.props.width/(this.days_number * (1 - marg))
+		},
         path: function(){
 			return this.animated_coordonates;
-
         },
 		coordonates: function(){
-			return this.props.coordonates
+			return this.props.list_inter
 		},
 		list_legends: function(){
 			let res = [];
@@ -37,58 +54,19 @@ const svg_graph = {
 	
 	 watch: {
 		coordonates: function(newValue){
-			gsap.to(this.$data, {duration: 0.7, animated_coordonates: this.createPath(newValue, this.props.width, this.props.height) , ease: "elastic.out(1, 0.5)"});
+			gsap.to(this.$data, {duration: 0.7, animated_coordonates: this.convertToHeight(newValue, this.props.height, this.props.width, this.props.echelle_de_notation) , ease: "elastic.out(1, 0.5)"});
 		}
 	},
     methods: {
-        createPath : (coo, maxWidth, maxHeight) => {
-		
-			let x = (el, maxW) => (el*maxW)/100;
-			let y = (el, maxH) => -((el*maxH)/100) + maxH;
-		
-			const adjust_coordonates = coo.map(el => [x(el[0], maxWidth), y(el[1], maxHeight)]);
-			
-			const line = (pointA, pointB) =>{
-				const lenX = pointB[0] - pointA[0];
-				const lenY = pointB[1] - pointA[1];
-				
-				return {
-					length : Math.sqrt(Math.pow(lenX, 2)+ Math.pow(lenX, 2)),
-					angle  : Math.atan2(lenY, lenX)
-				}
+        convertToHeight: function(interventions, height, width, scale){
+			const res_height = interventions.list.map(el => {return {height: Math.round((-height * (el.maitrise/ scale)) + height) }});
+			const posDateNumber = function(date_number, width, min, max){
+				return (width / (min - max)) * (-date_number + min)
 			};
-			
-			const controlPoint = (current, previous, next, reverse) => {
-			  const p = previous || current;
-			  const n = next || current;
-			  const smoothing = 0.2;
-			  const o = line(p, n);
-			  const angle = o.angle + (reverse ? Math.PI : 0);
-			  const length = o.length * smoothing;
-			  const x = current[0] + Math.cos(angle) * length;
-			  const y = current[1] + Math.sin(angle) * length;
-			  return [x, y];
-			};
-			
-			const bezierCommand = (point, i, a) => {
-			  const [cpsX, cpsY] = controlPoint(a[i - 1], a[i - 2], point)
-			  const [cpeX, cpeY] = controlPoint(point, a[i - 1], a[i + 1], true) 
-			  
-			  return `C ${cpsX},${cpsY} ${cpeX},${cpeY} ${point[0]},${point[1]}`
-			 
-			};
-			
-			const svgPath = (points, command) => { 
-			  const d = points.reduce((acc, point, i, a) => i === 0
-				? `M ${point[0]},${point[1]}`
-				: `${acc} ${command(point, i, a)}`
-			  , '');  
-			  return d
-			};
-			
-			let final_res = svgPath(adjust_coordonates, bezierCommand)
+			const res_position_X = interventions.list.map(el => {return {posX: Math.round(posDateNumber(el.date_num, width, interventions.first_date, interventions.last_date))}});
 
-			return final_res
+			const result = res_height.map((el, i) => Object.assign(el, res_position_X[i]));
+			return result
 		}
     }
 }
