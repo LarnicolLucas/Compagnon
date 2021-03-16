@@ -54,7 +54,7 @@ main{
 .leftNavBar{
   width: 20em;
   transition: all 0.3s ease-out;
-  border-radius: 1rem 0 0 1rem;
+  border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .fixedHeight80 {
@@ -96,7 +96,7 @@ main{
 }
 
 .borderRadius{
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 
 @keyframes bounceTextSize{
