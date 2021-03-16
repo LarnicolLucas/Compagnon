@@ -68,15 +68,15 @@ const graph = {
         addNumericDateToListObject: function(list_of_object, fn){
             return list_of_object.map(el => {
                 const date_split = fn(el.date);
-                return Object.assign(el, {date_num: (new Date(`${date_split[0]}-${date_split[1]}-${date_split[2]}`)).getTime()})
+                return Object.assign(el, {date_num: (new Date(`${date_split[0]}/${date_split[1]}/${date_split[2]}`)).getTime()})
             })
         },
 
         findMaxAndMin: function(list_of_object){
 
-            let array_of_numbers = list_of_object.map(el=> el.date_num);
-            let max = array_of_numbers.reduce((acc, cur)=> Math.max(acc, cur));
-            let min = array_of_numbers.reduce((acc, cur)=> Math.min(acc, cur));  
+            const array_of_numbers = list_of_object.map(el=> el.date_num);
+            const max = array_of_numbers.reduce((acc, cur)=> Math.max(acc, cur));
+            const min = array_of_numbers.reduce((acc, cur)=> Math.min(acc, cur)); 
             
             return {
                 max: max,
