@@ -10,9 +10,13 @@ const description_card = {
             <section class="col s4 l8 offset-s4 offset-l2">
                 <div class="row">
                     <indicateur_visite
-                        v-for="keys in indicateurs"
-                        :key="keys.id"
-                        :props="{color: props.color_contrast, label: keys.label, value: keys.value}"
+                        :props="{color: props.color_contrast, label: 'IMD', value: imd.length}"
+                    ></indicateur_visite>
+                    <indicateur_visite
+                        :props="{color: props.color_contrast, label: 'PST', value: pst.length}"
+                    ></indicateur_visite>
+                    <indicateur_visite
+                        :props="{color: props.color_contrast, label: 'VPS', value: vps.length}"
                     ></indicateur_visite>
 
                 </div>
@@ -21,13 +25,15 @@ const description_card = {
     `,
     props:["props"],
 
-    data: function(){
-        return {
-            indicateurs : [
-                {id: 0, label: 'IMD', value: this.props.model.agent.IMD},
-                {id: 1, label: 'PST', value: this.props.model.agent.PST},
-                {id: 2, label: 'VPS', value: this.props.model.agent.VPS}
-            ]
+    computed: {
+        imd: function(){
+            return this.props.model.interventions.filter(el => el.type == "IMD" ? true : false)
+        },
+        pst: function(){
+            return this.props.model.interventions.filter(el => el.type == "PST" ? true : false)
+        },
+        vps: function(){
+            return this.props.model.interventions.filter(el => el.type == "VPS" ? true : false)
         }
     },
     components: {
