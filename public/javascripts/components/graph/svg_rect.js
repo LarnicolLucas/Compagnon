@@ -21,7 +21,11 @@ export default {
     },
     computed: {
         x: function(){
-            return this.props.x
+            if(this.props.x == undefined){
+                return -100
+            } else {
+                return this.props.x
+            }
         },
         y: function(){
             return this.props.y

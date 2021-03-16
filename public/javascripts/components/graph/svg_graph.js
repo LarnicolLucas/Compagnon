@@ -58,7 +58,20 @@ const svg_graph = {
 			const res_position_X = interventions.list.map(el => {return {posX: Math.round(posDateNumber(el.date_num, width, interventions.first_date, interventions.last_date))}});
 
 			const result = res_height.map((el, i) => Object.assign(el, res_position_X[i]));
-			return result
+
+			const create_array = (nb_items, value_of_item) => {
+				const recursiveF = (current_item, res, nb_items, value_of_item) => 
+					current_item > nb_items 
+					? res 
+					: recursiveF(current_item+1, [...res, value_of_item], nb_items, value_of_item)
+
+				return recursiveF(0, [], nb_items, value_of_item)
+			}
+			const empty_array = create_array(this.days_number, {height: 0});
+
+			const mix_empty_array_and_interventions_array = empty_array.map((el, i) => result[i] == undefined ? el : result[i])
+
+			return mix_empty_array_and_interventions_array
 		}
     },
 	components: {
