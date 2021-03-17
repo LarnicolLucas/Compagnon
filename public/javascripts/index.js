@@ -31,7 +31,10 @@ var palette5= {
 
 var palette= {
   primary: "#6DD5FA",
-  contrast: "#FFB66A"
+  primary2: "#2980B9",
+  contrast: "#FFB66A",
+  dark_mode: "#243B55",
+  light_mode: "#fff"
 };
 
 var app = new Vue({
@@ -48,6 +51,9 @@ var app = new Vue({
 
         color_contrast: palette.contrast,
         color_primary: palette.primary,
+        color_primary2: palette.primary2,
+        dark_mode_color: palette.dark_mode,
+        light_mode_color: palette.light_mode,
 
         model: model
       }
