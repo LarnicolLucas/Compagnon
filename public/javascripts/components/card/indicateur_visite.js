@@ -3,7 +3,11 @@ const description_card = {
         <div class="col m4">
             <div class="row">
                 <div class="col s10 offset-1"> {{props.label}} </div>
-                <div class="col s10 offset-1 borderRadius" :style="{background: props.color}">{{props.value}}</div>
+                <div 
+                    class="col s10 offset-1 glass" 
+                    style="border-radius: 3px;">
+                        {{props.value}}
+                    </div>
             </div>
         </div>
     `,
