@@ -10,7 +10,7 @@ const graph = {
             width: size.width,
             height: size.height,
             echelle_de_notation: props.model.echelle_de_notation,
-            titre: this.props.model.items_metier[id_item].list[id_geste].nom,
+            titre: this.props.model.items_metier[id_item].list[id_geste].abreviation,
             
             list_inter: list_inter
         }"></svg_graph>
