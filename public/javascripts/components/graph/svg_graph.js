@@ -20,6 +20,7 @@ const svg_graph = {
 				<g>
 
 					<path v-for="keys in list_legends" :d="keys.path" stroke="grey" fill="transparent"/>
+					<text v-for="keys in list_legends" :y="keys.pos_text" x="0" :fill="props.color"> {{keys.text}} </text>
 					<path :d=" 'M 0 '+this.props.height +' V 0'" stroke="grey" fill="transparent"/>
 
 				</g>
@@ -41,11 +42,19 @@ const svg_graph = {
 			return this.convertToHeight(this.props.list_inter, this.props.height, this.props.width, this.props.echelle_de_notation)
         },
 		list_legends: function(){
-			let res = [];
-			for(let i = 0; i< this.props.echelle_de_notation; i++){
-				res.push(null)
-			};
-			return res.map((el,i) => {return {path: `M 0 ${(this.props.height/this.props.echelle_de_notation)*(i+1)} H ${this.props.width}`, id: i}}) 
+			const recursiveCreatArray = (current_iteration, array_length, res, fn) => 
+				current_iteration > array_length
+				? res
+				: recursiveCreatArray(current_iteration+1, array_length, fn(res, current_iteration), fn)
+
+			const createPath = (scale, height, width) => {
+				const coeff = height/scale;
+				return (res, i) =>  [...res, {path: `M 0 ${coeff*(i+1)} H ${width}`, id: i, pos_text: coeff*(i+1), text: scale - i}]
+			}
+
+			const createPathLegend = createPath(this.props.echelle_de_notation, this.props.height, this.props.width);
+
+			return recursiveCreatArray(0, this.props.echelle_de_notation, [], createPathLegend);
 		}
     },
 	
